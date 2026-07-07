@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🎁 Copilot・Geminiプロンプト50選 — AIコンサルで月100万円を稼ぐ方法</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --brand:#D9774F; --brand-deep:#C15640; --brand-soft:rgba(217,119,79,.12); --brand-line:rgba(217,119,79,.30);
+    --accent:#D9774F; --accent-deep:#B24E33; --accent-soft:rgba(217,119,79,.16);
+    --bg:#F1ECE3; --paper:#FBF8F2; --ink:#2A2620; --ink-mid:#6E6557; --line:#E4D9C7; --head:'M PLUS Rounded 1c'; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;}
+  .doc{max-width:920px;margin:0 auto;background:var(--paper);box-shadow:0 0 60px rgba(0,0,0,.10);}
+  .hero{position:relative;background:linear-gradient(160deg,var(--brand-soft) 0%,var(--bg) 70%);padding:40px 48px 34px;border-bottom:3px solid var(--brand-line);overflow:hidden;}
+  .hero .coin{position:absolute;width:150px;height:150px;border-radius:50%;background:var(--accent);opacity:.15;top:-48px;right:-32px;}
+  .hero .chan{display:inline-flex;align-items:center;gap:11px;margin-bottom:14px;}
+  .hero .chan img{width:44px;height:44px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.16);}
+  .hero .chan b{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:15.5px;}
+  .hero .chan b small{display:block;font-size:10.5px;color:var(--ink-mid);font-weight:500;}
+  .back{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--brand-deep);text-decoration:none;margin-bottom:14px;}
+  h1{font-family:var(--head);font-weight:900;font-size:29px;line-height:1.32;}
+  h1 .hl{color:var(--brand-deep);}
+  .hero p.sub{font-size:14.5px;color:var(--ink-mid);font-weight:700;margin-top:10px;max-width:680px;}
+  .meta{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;}
+  .meta span{background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:4px 13px;font-size:12px;font-weight:700;color:var(--ink-mid);}
+  .meta span.k{background:var(--accent-soft);border-color:var(--accent);color:var(--ink);}
+  .tocbar{background:var(--brand-soft);border-bottom:1px solid var(--line);padding:12px 48px;display:flex;flex-wrap:wrap;gap:7px;position:sticky;top:0;z-index:5;}
+  .tocbar a{font-size:12px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px 11px;}
+  .tocbar a:hover{border-color:var(--brand);}
+  section{padding:30px 48px;border-bottom:1px solid var(--line);}
+  .sec-h{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .sec-h .no{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--ink);font-family:var(--head);font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 0 var(--accent-deep);}
+  .sec-h h2{font-family:var(--head);font-weight:900;font-size:21px;color:var(--ink);}
+  .sec-h h3{font-family:var(--head);font-weight:900;font-size:17px;color:var(--ink);}
+  p.body{font-size:14.5px;color:var(--ink);margin-bottom:9px;}
+  .checks{list-style:none;margin-bottom:12px;}
+  .checks li{font-size:13.5px;color:var(--ink);padding:5px 0 5px 22px;position:relative;}
+  .checks li::before{content:'✔';position:absolute;left:2px;color:var(--brand);font-weight:900;}
+  pre.prompt{background:var(--ink);color:#ECECEA;border-radius:11px;padding:14px 16px;white-space:pre-wrap;word-break:break-word;
+    font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.6;max-height:340px;overflow-y:auto;}
+  .btns{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);border:2px solid var(--accent-deep);color:var(--ink);
+    border-radius:999px;padding:7px 18px;font-family:var(--head);font-weight:900;font-size:12.5px;cursor:pointer;}
+  .btn.ghost{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);}
+  .btn.sm{padding:5px 14px;font-size:11.5px;}
+  .btn:hover{filter:brightness(1.04);}
+  .box{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:12px;padding:15px 18px;margin-top:14px;}
+  .box h3{font-family:var(--head);font-weight:900;color:var(--accent-deep);font-size:14.5px;margin-bottom:6px;}
+  .box ul{margin-left:18px;font-size:13px;color:var(--ink);}
+  footer{background:var(--ink);color:#EBEBE7;padding:28px 48px;}
+  footer .frow{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
+  footer .lg{display:flex;align-items:center;gap:10px;} footer .lg img{width:38px;height:38px;border-radius:50%;}
+  footer .lg b{font-family:var(--head);font-weight:900;color:#fff;font-size:14px;} footer .lg b small{display:block;font-size:10.5px;color:#9C9C96;font-weight:500;}
+  footer .cta{background:var(--accent);color:var(--ink);border-radius:999px;padding:9px 20px;font-family:var(--head);font-weight:900;font-size:12.5px;text-decoration:none;}
+  footer .src{font-size:11px;color:#9C9C96;margin-top:12px;line-height:1.8;} footer .src a{color:var(--accent);text-decoration:none;}
+  /* card grid for individually copyable items */
+  .igrid{display:grid;grid-template-columns:1fr;gap:12px;}
+  .icard{background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:12px;padding:14px 16px;}
+  .icard .ititle{font-family:var(--head);font-weight:900;font-size:14.5px;color:var(--ink);margin-bottom:4px;}
+  .icard .imeta{font-size:11.5px;color:var(--ink-mid);margin-bottom:8px;}
+  .icard .imeta b{color:var(--brand-deep);}
+  /* link list for URL kit */
+  .linkcat{margin-bottom:18px;}
+  .linkcat .catdesc{font-size:13px;color:var(--ink-mid);margin-bottom:8px;}
+  .linkrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;padding:9px 12px;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;margin-bottom:7px;}
+  .linkrow .site{font-family:var(--head);font-weight:900;font-size:13.5px;color:var(--ink);flex-shrink:0;}
+  .linkrow a{font-size:12.5px;color:var(--brand-deep);font-weight:700;word-break:break-all;}
+  .linkrow .usage{flex-basis:100%;font-size:12px;color:var(--ink-mid);margin-top:2px;}
+  .catnav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+  .catnav a{font-size:11.5px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 10px;}
+</style>
+
+</head>
+<body>
+<div class="doc">
+  <div class="hero">
+    <span class="coin"></span>
+    <a class="back" href="./present.html">← プレゼントキット一覧に戻る</a>
+    <div class="chan"><img src="data:image/jpeg;base64,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" alt="ClaudeCodeチャンネル"><b>ClaudeCodeチャンネル<small>Claude Code を学ぶ</small></b></div>
+    <h1>🎁 Copilot・Gemini<br><span class="hl">プロンプト50選</span></h1>
+    <p class="sub">10カテゴリ×5本、部署別の実務プロンプト集です。各プロンプトに個別のコピー・ボタンがあります。</p>
+  </div>
+  <div class="tocbar"><a href="#c1">1. 会議・議事録（Teams/Meet）</a><a href="#c2">2. メール処理（Outlook/Gmail）</a><a href="#c3">3. Excel・スプレッドシート分析</a><a href="#c4">4. 資料作成（Word/Docs/PowerPoint/スライド）</a><a href="#c5">5. 営業（提案・見積・商談準備）</a><a href="#c6">6. 経理・総務</a><a href="#c7">7. 人事・採用</a><a href="#c8">8. カスタマーサポート</a><a href="#c9">9. マーケティング・SNS</a><a href="#c10">10. 経営・企画（NotebookLM活用含む）</a></div>
+  <section>
+    <p class="body">Microsoft 365 Copilot と Gemini for Google Workspace のどちらでも使える、部署別の実務プロンプト集です。各プロンプトに個別のコピー・ボタンがあります。【】部分を自社の情報に差し替えて、出力は人が確認してから使ってください。</p>
+    <div class="btns"><button class="btn ghost sm" onclick="downloadText('pfull','copilot-gemini-prompts50.md', this)">⬇ 全50件をまとめてダウンロード（.md）</button></div>
+    <pre id="pfull" style="display:none;"># 🎁 Copilot・Gemini プロンプト50選 — 部署別・コピペ即用
+
+Microsoft 365 Copilot と Gemini for Google Workspace のどちらでも使える、部署別の実務プロンプト集です。汎用的な書き方を基本にしつつ、ツール固有の機能（Teams議事録・NotebookLMなど）は対象ツールを明記しています。
+
+**受け取り方**: 各コードブロックをコピーするか、このファイルを保存してください。
+
+## 使い方3ステップ
+
+1. 自分の業務に近いものを選ぶ
+2. 【】部分を自社の情報に差し替える
+3. 出力は人が確認してから使う
+
+---
+
+## 1. 会議・議事録（Teams/Meet）
+
+### 1. 会議の要約と決定事項の抽出
+対象: 両方 ｜ 場面: 会議終了直後に要点を整理したいとき
+```text
+以下は【会議名】の文字起こしです。この内容から、①決定事項、②未決事項（誰が・いつまでに結論を出すか）、③次回までのアクションアイテム（担当者名付き）の3つを箇条書きで整理してください。それぞれ1項目20文字以内で簡潔にまとめてください。
+
+【ここに文字起こしまたは議事メモを貼り付け】
+```
+
+### 2. 議事録の清書とフォーマット統一
+対象: 両方 ｜ 場面: 手書きメモや箇条書きを正式な議事録形式に整えたいとき
+```text
+以下の会議メモを、社内標準の議事録フォーマット（日時／出席者／議題／議論内容／決定事項／宿題事項）に整形してください。文体は「です・ます調」で統一し、口語表現（「えーと」「なんか」等）は削除してください。
+
+【ここに会議メモを貼り付け】
+```
+
+### 3. Teams会議の自動生成議事録から次のアクションを抽出
+対象: Copilot（Teams） ｜ 場面: Teams会議終了後、自動生成された議事録から実務タスクだけを取り出したいとき
+```text
+このTeams会議の自動議事録から、【自分の部署名】に関係するタスクだけを抜き出して、表形式（タスク内容／担当者／期限／優先度）でまとめてください。担当者が明記されていない場合は「未定」と記載してください。
+
+【ここにTeams議事録の内容を貼り付け】
+```
+
+### 4. 複数回の会議内容を時系列で整理
+対象: 両方 ｜ 場面: 同じ案件で複数回開催した会議の流れを振り返りたいとき
+```text
+以下は【案件名】について過去【回数】回分の会議記録です。案件の論点がどう変化してきたかを時系列で整理し、①最初に決まっていたこと、②途中で変更になったこと（理由も含む）、③現時点で確定していることの3段階で400字程度にまとめてください。
+
+【ここに複数回分の会議記録を貼り付け】
+```
+
+### 5. 会議前のアジェンダ叩き台作成
+対象: 両方 ｜ 場面: 会議招集前に議題案を準備したいとき
+```text
+【会議の目的】について、参加者【参加者の役職・人数】向けの会議アジェンダ案を作成してください。所要時間は【会議時間】分を想定し、議題ごとに想定時間配分（分）を付けた箇条書きで出力してください。最後に「この会議で決めたいこと」を1文で明記してください。
+```
+
+---
+
+## 2. メール処理（Outlook/Gmail）
+
+### 6. 長文メールの要約
+対象: 両方 ｜ 場面: 長いメールスレッドの内容を素早く把握したいとき
+```text
+以下のメール本文を3行以内で要約してください。①誰から何の依頼・報告か、②求められている対応、③期限、の3点を含めてください。
+
+【ここにメール本文を貼り付け】
+```
+
+### 7. 依頼メールへの返信文ドラフト作成
+対象: 両方 ｜ 場面: 取引先からの依頼に対する返信を素早く作りたいとき
+```text
+以下のメールに対する返信文を作成してください。トーンは丁寧なビジネス文体、結論は「【承諾する／条件付きで承諾する／お断りする】」とし、理由を2文以内で添えてください。件名も含めて出力してください。
+
+【ここに元のメール本文を貼り付け】
+
+対応方針: 【自分が伝えたい要点を箇条書きで】
+```
+
+### 8. メールスレッド全体から未対応事項を洗い出す
+対象: 両方 ｜ 場面: 長期化した往復メールで対応漏れがないか確認したいとき
+```text
+以下は【取引先名】とのメールのやり取り全文です。この中でまだ返信・対応が済んでいない依頼事項を一覧化してください。出力は表形式（依頼内容／依頼者／初出日／現在の状況）でお願いします。
+
+【ここにメールスレッド全文を貼り付け】
+```
+
+### 9. 断りづらい依頼への角が立たない返信文作成
+対象: 両方 ｜ 場面: 納期短縮や無理な条件変更の依頼を丁寧に断りたいとき
+```text
+以下の依頼内容に対して、相手の事情に配慮しつつ、こちらの制約（【制約の内容】）を理由にお断り、または代替案を提示する返信メールを作成してください。文字数は300字前後、角が立たない表現にしてください。
+
+依頼内容: 【ここに依頼メールの要点を貼り付け】
+```
+
+### 10. メール文面のトーン調整（社外向け／社内向け）
+対象: 両方 ｜ 場面: 下書きした文章のトーンを目的に合わせて調整したいとき
+```text
+以下の文章を【社外のお客様向けの丁寧な文体／社内向けのカジュアルな文体】に書き換えてください。内容や事実関係は変えず、文体と語尾だけを調整してください。
+
+【ここに元の文章を貼り付け】
+```
+
+---
+
+## 3. Excel・スプレッドシート分析
+
+### 11. 表データの傾向を自然文で要約
+対象: 両方 ｜ 場面: 数値表を上司や他部署への報告用に言語化したいとき
+```text
+以下の表データから、①最も数値が高い項目、②最も数値が低い項目、③前月・前期からの増減が大きい項目、の3点を読み取り、報告用に150字程度の文章でまとめてください。専門用語は使わず平易な表現にしてください。
+
+【ここに表データを貼り付け（列名を含める）】
+```
+
+### 12. 関数・数式の説明と修正
+対象: 両方 ｜ 場面: 複雑な数式の意味が分からない、またはエラーが出て直したいとき
+```text
+以下の数式が何をしているのか、初心者にも分かるように1行ずつ日本語で説明してください。またエラーが出ている場合は、原因と修正後の数式も提示してください。
+
+数式: 【ここに数式をそのまま貼り付け】
+エラー内容（あれば）: 【エラーメッセージ】
+```
+
+### 13. データの異常値・入力ミス候補の洗い出し
+対象: 両方 ｜ 場面: 大量データの中から入力ミスや外れ値を手作業で探すのが大変なとき
+```text
+以下の表データについて、明らかに他の行と傾向が異なる値（入力ミスの可能性がある行）を指摘してください。指摘した行番号・列名・値・その値が疑わしいと判断した理由を表形式で出力してください。
+
+【ここに表データを貼り付け】
+```
+
+### 14. 集計表からグラフ化しやすい形にデータ整形
+対象: 両方 ｜ 場面: バラバラな形式のデータをグラフ作成用に整えたいとき
+```text
+以下のデータを、横軸を【項目名】、縦軸を【数値項目名】としたグラフを作る前提で、余分な列を除いた集計用の表に整形してください。合計行・小計行は分けて別枠で出力してください。
+
+【ここに元データを貼り付け】
+```
+
+### 15. 複数シート・複数期間データの比較サマリー作成
+対象: 両方 ｜ 場面: 月次・四半期などの複数期間データを比較して変化を把握したいとき
+```text
+以下は【対象期間①】と【対象期間②】の同じ形式のデータです。両者を比較し、増加した項目・減少した項目をそれぞれ上位3件ずつ、増減率（％）とともに箇条書きで出力してください。
+
+【対象期間①のデータ】
+【ここに貼り付け】
+
+【対象期間②のデータ】
+【ここに貼り付け】
+```
+
+---
+
+## 4. 資料作成（Word/Docs/PowerPoint/スライド）
+
+### 16. 箇条書きメモから提案書の骨子を作成
+対象: 両方 ｜ 場面: アイデア段階のメモを提案書の構成案に組み立てたいとき
+```text
+以下の箇条書きメモをもとに、【提案書のテーマ】に関する提案書の骨子（見出しと各見出し2〜3行の要約）を作成してください。構成は「背景」「課題」「提案内容」「期待される効果」「進め方」の5章立てにしてください。
+
+【ここに箇条書きメモを貼り付け】
+```
+
+### 17. 長文資料のスライド構成案への変換
+対象: 両方 ｜ 場面: Word/Docsで作った長文資料をプレゼン用に構成し直したいとき
+```text
+以下の文書を【枚数】枚程度のプレゼンスライド構成に変換してください。各スライドについて、タイトル・本文の箇条書き（各3行以内）を出力してください。図表を入れるべき箇所には「【図表案】」と明記してください。
+
+【ここに文書本文を貼り付け】
+```
+
+### 18. 社内向け文書のわかりやすい言い換え
+対象: 両方 ｜ 場面: 専門的・硬い文章を非専門部署にも伝わる表現にしたいとき
+```text
+以下の文章を、【対象読者（例：営業部の新入社員）】にも分かるように、専門用語を減らし、具体例を1つ交えて書き換えてください。文字数は元の文章の1.2倍以内に収めてください。
+
+【ここに元の文章を貼り付け】
+```
+
+### 19. 資料のトーン・文体チェックと統一
+対象: 両方 ｜ 場面: 複数人で分担して作った資料の文体がバラバラなとき
+```text
+以下の文章について、文体（である調／です・ます調）が統一されているか確認し、不統一な箇所を指摘してください。その上で【です・ます調／である調】に統一した全文を出力してください。
+
+【ここに資料本文を貼り付け】
+```
+
+### 20. スライドの発表原稿（トークスクリプト）作成
+対象: 両方 ｜ 場面: スライド内容をもとに話す原稿を準備したいとき
+```text
+以下のスライド内容をもとに、1枚あたり【想定秒数】秒で話せる発表原稿を作成してください。口語体で、聞き手が【聴衆の属性】であることを踏まえた分かりやすい言い回しにしてください。
+
+【ここにスライドの見出しと箇条書き内容を貼り付け】
+```
+
+---
+
+## 5. 営業（提案・見積・商談準備）
+
+### 21. 商談前の相手企業リサーチ要約
+対象: 両方 ｜ 場面: 初回商談の前に相手企業の情報を素早く整理したいとき
+```text
+以下の企業情報（Webサイトのテキストや会社概要）から、①事業内容、②想定される課題やニーズ、③自社の【提供サービス名】が刺さりそうなポイント、の3点を箇条書きでまとめてください。
+
+【ここに企業のWebサイト文章や会社概要を貼り付け】
+```
+
+### 22. 商談メモから提案骨子への変換
+対象: 両方 ｜ 場面: 商談中に取ったメモを提案書の骨子に落とし込みたいとき
+```text
+以下は【企業名】との商談メモです。この内容から、相手の課題・要望・予算感・決裁フローを整理した上で、提案の骨子（課題認識／提案内容／概算費用感／次のステップ）を作成してください。
+
+【ここに商談メモを貼り付け】
+```
+
+### 23. 見積書の内容チェックと説明文作成
+対象: 両方 ｜ 場面: 見積書を送る前に金額の妥当性や説明不足がないか確認したいとき
+```text
+以下の見積内容について、①金額の内訳が顧客に分かりやすいか、②説明が不足していそうな項目、を指摘してください。その上で、見積書に添える送付メール文（300字程度）も作成してください。
+
+【ここに見積内容（項目・金額）を貼り付け】
+```
+
+### 24. 競合比較資料の作成
+対象: 両方 ｜ 場面: 提案の中で自社と競合の違いを整理して見せたいとき
+```text
+自社【自社サービス名】と競合【競合サービス名】について、以下の情報をもとに比較表（比較項目／自社／競合／顧客にとっての意味）を作成してください。誇張せず、事実ベースで中立的な表現にしてください。
+
+自社の特徴: 【箇条書きで】
+競合の特徴: 【箇条書きで】
+```
+
+### 25. 商談後のフォローアップメール作成
+対象: 両方 ｜ 場面: 商談終了後、当日中にお礼と次のアクションを送りたいとき
+```text
+以下の商談内容をもとに、フォローアップメールを作成してください。①本日の感謝、②話した内容の要点3つ、③次回までにこちらが準備すること、④次回のご都合を伺う一文、の順で300字程度にまとめてください。
+
+【ここに商談で話した内容の要点を貼り付け】
+```
+
+---
+
+## 6. 経理・総務
+
+### 26. 経費精算の内容チェック
+対象: 両方 ｜ 場面: 提出された経費申請に不備がないか確認したいとき
+```text
+以下の経費申請内容について、社内規定（【規定の要点、例：交通費は実費、接待費は上限1万円/人】）と照らして、不備や確認が必要な項目を指摘してください。問題なければ「不備なし」と回答してください。
+
+【ここに経費申請の項目（日付・金額・用途）を貼り付け】
+```
+
+### 27. 請求書メールの文面作成
+対象: 両方 ｜ 場面: 取引先に請求書を送付する際の案内メールを作りたいとき
+```text
+【取引先名】宛に、請求書（請求金額【金額】円、支払期限【期日】）を送付する案内メールを作成してください。丁寧なビジネス文体で、添付ファイルがあることを明記してください。
+```
+
+### 28. 社内規定・マニュアルのQA形式への変換
+対象: 両方 ｜ 場面: 長い社内規定文書を問い合わせ対応用のQ&amp;A集にしたいとき
+```text
+以下の社内規定文書から、社員からよく聞かれそうな質問を5つ想定し、それぞれに対する回答をこの文書の内容に基づいて作成してください。出力形式はQ&amp;A形式でお願いします。
+
+【ここに社内規定・マニュアル本文を貼り付け】
+```
+
+### 29. 備品・契約更新のリマインド文作成
+対象: 両方 ｜ 場面: 契約更新やライセンス更新の社内通知を出したいとき
+```text
+【契約・サービス名】の更新期限が【期日】に迫っていることを関係者に知らせる社内通知メールを作成してください。対応が必要な担当者への依頼事項（更新の要否確認、承認フローなど）を箇条書きで含めてください。
+```
+
+### 30. 総務問い合わせメールの一次回答文作成
+対象: 両方 ｜ 場面: 社員からの総務系の問い合わせに定型的な一次回答をしたいとき
+```text
+以下の社員からの問い合わせ内容に対して、社内規定（【関連規定の要点】）に基づいた一次回答文を作成してください。規定に明記がない場合は「担当部署に確認の上、改めて連絡する」旨を記載してください。
+
+問い合わせ内容: 【ここに貼り付け】
+```
+
+---
+
+## 7. 人事・採用
+
+### 31. 求人票の叩き台作成
+対象: 両方 ｜ 場面: 新規ポジションの求人票を一から作るとき
+```text
+以下の情報をもとに求人票の叩き台を作成してください。構成は「募集背景」「業務内容」「求めるスキル・経験」「歓迎条件」「働き方・待遇」の5項目でお願いします。
+
+職種: 【職種名】
+募集背景: 【背景】
+必須スキル: 【箇条書きで】
+```
+
+### 32. 応募書類（履歴書・職務経歴書）の要点整理
+対象: 両方 ｜ 場面: 大量の応募書類から面接前に要点だけ把握したいとき
+```text
+以下の職務経歴書の内容から、①これまでの経験年数と職種、②募集ポジション（【募集ポジション名】）との関連が強いスキル・経験、③面接で確認したい点、を箇条書きで整理してください。
+
+【ここに職務経歴書の内容を貼り付け】
+```
+
+### 33. 面接の質問リスト作成
+対象: 両方 ｜ 場面: 面接前に候補者に応じた質問を準備したいとき
+```text
+以下の候補者の経歴と、募集ポジション（【募集ポジション名】）の要件をもとに、面接で聞くべき質問を【質問数】個作成してください。経験の深掘り質問と、カルチャーフィットを見る質問をバランスよく含めてください。
+
+候補者の経歴: 【ここに貼り付け】
+募集要件: 【ここに貼り付け】
+```
+
+### 34. 新入社員向けオンボーディング案内文作成
+対象: 両方 ｜ 場面: 入社日が近い新入社員に事前案内を送りたいとき
+```text
+【入社予定日】に入社する新入社員に向けて、初日の流れ（集合時間・場所・持ち物・当日のスケジュール概要）を案内するメールを作成してください。丁寧かつ緊張を和らげる柔らかいトーンでお願いします。
+
+初日の流れ: 【箇条書きで】
+```
+
+### 35. 人事評価コメントのドラフト作成
+対象: 両方 ｜ 場面: 評価シートに書くコメントの言葉選びに迷うとき
+```text
+以下の業務実績のメモをもとに、人事評価コメント（150字程度）のドラフトを作成してください。良かった点を具体的に、改善点は次期への期待として前向きな表現でまとめてください。
+
+【ここに業務実績のメモを貼り付け】
+```
+
+---
+
+## 8. カスタマーサポート
+
+### 36. 問い合わせ内容の分類と優先度付け
+対象: 両方 ｜ 場面: 大量の問い合わせメールをさばく前に仕分けしたいとき
+```text
+以下の複数の問い合わせ内容を、カテゴリ（【カテゴリ例：不具合／使い方／請求／解約】）ごとに分類し、対応優先度（高・中・低）を付けて表形式で出力してください。
+
+【ここに複数件の問い合わせ内容を貼り付け】
+```
+
+### 37. クレーム対応メールの下書き作成
+対象: 両方 ｜ 場面: お客様からのクレームに対して慎重な返信を準備したいとき
+```text
+以下のクレーム内容に対する返信メールの下書きを作成してください。①まずお詫びの言葉、②状況確認のための質問、③今後の対応方針、の順で構成し、言い訳がましい表現は避けてください。文字数は300字程度でお願いします。
+
+クレーム内容: 【ここに貼り付け】
+```
+
+### 38. FAQ・よくある質問集の作成
+対象: 両方 ｜ 場面: 過去の問い合わせ履歴からFAQページの原案を作りたいとき
+```text
+以下は過去の問い合わせ履歴です。この中から頻度が高い質問を上位【件数】件選び、Q&amp;A形式（質問／回答）でまとめてください。回答は初めて見る顧客にも分かる言葉で書いてください。
+
+【ここに過去の問い合わせ履歴を貼り付け】
+```
+
+### 39. 問い合わせ対応の一次回答テンプレート作成
+対象: 両方 ｜ 場面: 対応まで時間がかかる問い合わせに、まず受付連絡を送りたいとき
+```text
+以下の問い合わせ内容に対して、「受付は完了したこと」「回答までにかかる目安の日数（【日数】日）」「緊急の場合の連絡先」を含む一次回答メールのテンプレートを作成してください。
+
+問い合わせ内容: 【ここに貼り付け】
+```
+
+### 40. 顧客対応履歴からの傾向分析
+対象: 両方 ｜ 場面: 一定期間の対応履歴から改善点を見つけたいとき
+```text
+以下は【期間】分の顧客対応履歴です。この中から繰り返し発生している問題を3つ挙げ、それぞれの原因として考えられることと、再発防止のためにできそうな対応策を箇条書きで提示してください。
+
+【ここに対応履歴を貼り付け】
+```
+
+---
+
+## 9. マーケティング・SNS
+
+### 41. ブログ記事からSNS投稿文への要約
+対象: 両方 ｜ 場面: 長い記事をSNS用に短く要約したいとき
+```text
+以下のブログ記事の内容を、【X（Twitter）／Instagram／LinkedIn】投稿用に140字程度で要約してください。読者の興味を引く一文を冒頭に置き、最後に記事へのリンクを貼るスペースとして「【URL】」と記載してください。
+
+【ここにブログ記事本文を貼り付け】
+```
+
+### 42. 商品・サービス紹介文のバリエーション作成
+対象: 両方 ｜ 場面: 同じ商品説明を複数パターン用意してテストしたいとき
+```text
+以下の商品情報をもとに、SNS投稿用の紹介文を【本数】パターン作成してください。それぞれ切り口（例：機能重視／利用シーン重視／お客様の声重視）を変え、各150字以内にしてください。
+
+商品情報: 【ここに貼り付け】
+```
+
+### 43. メールマガジンの構成案作成
+対象: 両方 ｜ 場面: 定期配信するメルマガの構成を考えるとき
+```text
+【今月のテーマ】に関するメールマガジンの構成案を作成してください。構成は「件名案（3パターン）」「導入文」「本文の見出し3つとそれぞれの要約」「締めの一文（行動喚起）」でお願いします。
+```
+
+### 44. アンケート・レビュー結果の要約
+対象: 両方 ｜ 場面: 顧客アンケートやレビューの自由記述をまとめたいとき
+```text
+以下のアンケート自由記述回答をもとに、①好評だった点の上位3つ、②改善要望の上位3つ、を件数の目安とともに箇条書きでまとめてください。個別の回答をそのまま引用せず、傾向として要約してください。
+
+【ここにアンケート自由記述回答を貼り付け】
+```
+
+### 45. 競合のSNS投稿・広告文の傾向分析
+対象: 両方 ｜ 場面: 競合のSNS発信内容から自社の参考にしたいとき
+```text
+以下は競合【競合名】のSNS投稿文をいくつか集めたものです。この投稿群から、①よく使われている訴求ポイント、②投稿のトーン（フォーマル／カジュアル等）、③自社が参考にできそうな要素、を整理してください。
+
+【ここに競合のSNS投稿文を複数貼り付け】
+```
+
+---
+
+## 10. 経営・企画（NotebookLM活用含む）
+
+### 46. 複数資料を横断した論点整理
+対象: Gemini（NotebookLM） ｜ 場面: 複数の社内資料・議事録を一括で読み込んで論点を整理したいとき
+```text
+アップロードした資料（【資料の種類、例：過去3回分の経営会議議事録】）全体を通して、①繰り返し議論されているが結論が出ていない論点、②すでに合意されている方針、③資料間で矛盾している記述、の3つに分けて整理してください。
+```
+
+### 47. 経営会議向け報告資料の要約
+対象: 両方 ｜ 場面: 部門の状況を経営層向けに簡潔に報告したいとき
+```text
+以下の部門レポートを、経営会議で使う報告資料用に要約してください。構成は「今月のサマリー（3行）」「主要指標の増減」「課題」「来月のアクション」とし、全体で300字以内にしてください。
+
+【ここに部門レポートの内容を貼り付け】
+```
+
+### 48. 新規事業アイデアの壁打ち相手として整理
+対象: 両方 ｜ 場面: アイデア段階の事業案を整理してもらいたいとき
+```text
+以下の新規事業アイデアについて、①想定される顧客層、②解決しようとしている課題、③考えられるリスクや懸念点、④検証すべき最初のステップ、の4点で整理してください。良い点・悪い点どちらも率直に指摘してください。
+
+事業アイデア: 【ここに貼り付け】
+```
+
+### 49. 社内資料をもとにしたQ&amp;A想定問答集作成
+対象: Gemini（NotebookLM） ｜ 場面: 説明会や役員報告の前に想定質問への回答を準備したいとき
+```text
+アップロードした資料（【資料名】）の内容をもとに、【説明会／役員会議】で聞かれそうな質問を【件数】個想定し、資料の内容に基づいた回答案を作成してください。資料に記載がない内容は無理に答えず「資料には記載なし」と明記してください。
+```
+
+### 50. 中期計画・企画書のたたき台作成
+対象: 両方 ｜ 場面: ゼロから中期計画や企画書の骨子を作りたいとき
+```text
+以下の情報をもとに、【対象期間、例：3か年】の中期計画のたたき台を作成してください。構成は「現状分析」「目指す姿」「重点施策（3つ）」「施策ごとの概算スケジュール」でお願いします。
+
+現状の情報: 【ここに事業の現状や課題を箇条書きで貼り付け】
+目指したい方向性: 【ここに簡単な方向性を記載】
+```
+
+---
+
+**ポイント**: AIの出力は人が確認してから使うのが前提です。
+</pre>
+  </section>
+  <section id="c1">
+    <div class="sec-h"><div class="no">1</div><h2>会議・議事録（Teams/Meet）</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">1. 会議の要約と決定事項の抽出</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 会議終了直後に要点を整理したいとき</div>
+      <pre class="prompt" id="pp1">以下は【会議名】の文字起こしです。この内容から、①決定事項、②未決事項（誰が・いつまでに結論を出すか）、③次回までのアクションアイテム（担当者名付き）の3つを箇条書きで整理してください。それぞれ1項目20文字以内で簡潔にまとめてください。
+
+【ここに文字起こしまたは議事メモを貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp1', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">2. 議事録の清書とフォーマット統一</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 手書きメモや箇条書きを正式な議事録形式に整えたいとき</div>
+      <pre class="prompt" id="pp2">以下の会議メモを、社内標準の議事録フォーマット（日時／出席者／議題／議論内容／決定事項／宿題事項）に整形してください。文体は「です・ます調」で統一し、口語表現（「えーと」「なんか」等）は削除してください。
+
+【ここに会議メモを貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp2', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">3. Teams会議の自動生成議事録から次のアクションを抽出</div>
+      <div class="imeta">対象: <b>Copilot（Teams）</b> ｜ 場面: Teams会議終了後、自動生成された議事録から実務タスクだけを取り出したいとき</div>
+      <pre class="prompt" id="pp3">このTeams会議の自動議事録から、【自分の部署名】に関係するタスクだけを抜き出して、表形式（タスク内容／担当者／期限／優先度）でまとめてください。担当者が明記されていない場合は「未定」と記載してください。
+
+【ここにTeams議事録の内容を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp3', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">4. 複数回の会議内容を時系列で整理</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 同じ案件で複数回開催した会議の流れを振り返りたいとき</div>
+      <pre class="prompt" id="pp4">以下は【案件名】について過去【回数】回分の会議記録です。案件の論点がどう変化してきたかを時系列で整理し、①最初に決まっていたこと、②途中で変更になったこと（理由も含む）、③現時点で確定していることの3段階で400字程度にまとめてください。
+
+【ここに複数回分の会議記録を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp4', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">5. 会議前のアジェンダ叩き台作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 会議招集前に議題案を準備したいとき</div>
+      <pre class="prompt" id="pp5">【会議の目的】について、参加者【参加者の役職・人数】向けの会議アジェンダ案を作成してください。所要時間は【会議時間】分を想定し、議題ごとに想定時間配分（分）を付けた箇条書きで出力してください。最後に「この会議で決めたいこと」を1文で明記してください。</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp5', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c2">
+    <div class="sec-h"><div class="no">2</div><h2>メール処理（Outlook/Gmail）</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">6. 長文メールの要約</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 長いメールスレッドの内容を素早く把握したいとき</div>
+      <pre class="prompt" id="pp6">以下のメール本文を3行以内で要約してください。①誰から何の依頼・報告か、②求められている対応、③期限、の3点を含めてください。
+
+【ここにメール本文を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp6', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">7. 依頼メールへの返信文ドラフト作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 取引先からの依頼に対する返信を素早く作りたいとき</div>
+      <pre class="prompt" id="pp7">以下のメールに対する返信文を作成してください。トーンは丁寧なビジネス文体、結論は「【承諾する／条件付きで承諾する／お断りする】」とし、理由を2文以内で添えてください。件名も含めて出力してください。
+
+【ここに元のメール本文を貼り付け】
+
+対応方針: 【自分が伝えたい要点を箇条書きで】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp7', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">8. メールスレッド全体から未対応事項を洗い出す</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 長期化した往復メールで対応漏れがないか確認したいとき</div>
+      <pre class="prompt" id="pp8">以下は【取引先名】とのメールのやり取り全文です。この中でまだ返信・対応が済んでいない依頼事項を一覧化してください。出力は表形式（依頼内容／依頼者／初出日／現在の状況）でお願いします。
+
+【ここにメールスレッド全文を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp8', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">9. 断りづらい依頼への角が立たない返信文作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 納期短縮や無理な条件変更の依頼を丁寧に断りたいとき</div>
+      <pre class="prompt" id="pp9">以下の依頼内容に対して、相手の事情に配慮しつつ、こちらの制約（【制約の内容】）を理由にお断り、または代替案を提示する返信メールを作成してください。文字数は300字前後、角が立たない表現にしてください。
+
+依頼内容: 【ここに依頼メールの要点を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp9', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">10. メール文面のトーン調整（社外向け／社内向け）</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 下書きした文章のトーンを目的に合わせて調整したいとき</div>
+      <pre class="prompt" id="pp10">以下の文章を【社外のお客様向けの丁寧な文体／社内向けのカジュアルな文体】に書き換えてください。内容や事実関係は変えず、文体と語尾だけを調整してください。
+
+【ここに元の文章を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp10', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c3">
+    <div class="sec-h"><div class="no">3</div><h2>Excel・スプレッドシート分析</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">11. 表データの傾向を自然文で要約</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 数値表を上司や他部署への報告用に言語化したいとき</div>
+      <pre class="prompt" id="pp11">以下の表データから、①最も数値が高い項目、②最も数値が低い項目、③前月・前期からの増減が大きい項目、の3点を読み取り、報告用に150字程度の文章でまとめてください。専門用語は使わず平易な表現にしてください。
+
+【ここに表データを貼り付け（列名を含める）】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp11', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">12. 関数・数式の説明と修正</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 複雑な数式の意味が分からない、またはエラーが出て直したいとき</div>
+      <pre class="prompt" id="pp12">以下の数式が何をしているのか、初心者にも分かるように1行ずつ日本語で説明してください。またエラーが出ている場合は、原因と修正後の数式も提示してください。
+
+数式: 【ここに数式をそのまま貼り付け】
+エラー内容（あれば）: 【エラーメッセージ】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp12', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">13. データの異常値・入力ミス候補の洗い出し</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 大量データの中から入力ミスや外れ値を手作業で探すのが大変なとき</div>
+      <pre class="prompt" id="pp13">以下の表データについて、明らかに他の行と傾向が異なる値（入力ミスの可能性がある行）を指摘してください。指摘した行番号・列名・値・その値が疑わしいと判断した理由を表形式で出力してください。
+
+【ここに表データを貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp13', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">14. 集計表からグラフ化しやすい形にデータ整形</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: バラバラな形式のデータをグラフ作成用に整えたいとき</div>
+      <pre class="prompt" id="pp14">以下のデータを、横軸を【項目名】、縦軸を【数値項目名】としたグラフを作る前提で、余分な列を除いた集計用の表に整形してください。合計行・小計行は分けて別枠で出力してください。
+
+【ここに元データを貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp14', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">15. 複数シート・複数期間データの比較サマリー作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 月次・四半期などの複数期間データを比較して変化を把握したいとき</div>
+      <pre class="prompt" id="pp15">以下は【対象期間①】と【対象期間②】の同じ形式のデータです。両者を比較し、増加した項目・減少した項目をそれぞれ上位3件ずつ、増減率（％）とともに箇条書きで出力してください。
+
+【対象期間①のデータ】
+【ここに貼り付け】
+
+【対象期間②のデータ】
+【ここに貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp15', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c4">
+    <div class="sec-h"><div class="no">4</div><h2>資料作成（Word/Docs/PowerPoint/スライド）</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">16. 箇条書きメモから提案書の骨子を作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: アイデア段階のメモを提案書の構成案に組み立てたいとき</div>
+      <pre class="prompt" id="pp16">以下の箇条書きメモをもとに、【提案書のテーマ】に関する提案書の骨子（見出しと各見出し2〜3行の要約）を作成してください。構成は「背景」「課題」「提案内容」「期待される効果」「進め方」の5章立てにしてください。
+
+【ここに箇条書きメモを貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp16', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">17. 長文資料のスライド構成案への変換</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: Word/Docsで作った長文資料をプレゼン用に構成し直したいとき</div>
+      <pre class="prompt" id="pp17">以下の文書を【枚数】枚程度のプレゼンスライド構成に変換してください。各スライドについて、タイトル・本文の箇条書き（各3行以内）を出力してください。図表を入れるべき箇所には「【図表案】」と明記してください。
+
+【ここに文書本文を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp17', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">18. 社内向け文書のわかりやすい言い換え</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 専門的・硬い文章を非専門部署にも伝わる表現にしたいとき</div>
+      <pre class="prompt" id="pp18">以下の文章を、【対象読者（例：営業部の新入社員）】にも分かるように、専門用語を減らし、具体例を1つ交えて書き換えてください。文字数は元の文章の1.2倍以内に収めてください。
+
+【ここに元の文章を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp18', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">19. 資料のトーン・文体チェックと統一</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 複数人で分担して作った資料の文体がバラバラなとき</div>
+      <pre class="prompt" id="pp19">以下の文章について、文体（である調／です・ます調）が統一されているか確認し、不統一な箇所を指摘してください。その上で【です・ます調／である調】に統一した全文を出力してください。
+
+【ここに資料本文を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp19', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">20. スライドの発表原稿（トークスクリプト）作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: スライド内容をもとに話す原稿を準備したいとき</div>
+      <pre class="prompt" id="pp20">以下のスライド内容をもとに、1枚あたり【想定秒数】秒で話せる発表原稿を作成してください。口語体で、聞き手が【聴衆の属性】であることを踏まえた分かりやすい言い回しにしてください。
+
+【ここにスライドの見出しと箇条書き内容を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp20', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c5">
+    <div class="sec-h"><div class="no">5</div><h2>営業（提案・見積・商談準備）</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">21. 商談前の相手企業リサーチ要約</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 初回商談の前に相手企業の情報を素早く整理したいとき</div>
+      <pre class="prompt" id="pp21">以下の企業情報（Webサイトのテキストや会社概要）から、①事業内容、②想定される課題やニーズ、③自社の【提供サービス名】が刺さりそうなポイント、の3点を箇条書きでまとめてください。
+
+【ここに企業のWebサイト文章や会社概要を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp21', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">22. 商談メモから提案骨子への変換</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 商談中に取ったメモを提案書の骨子に落とし込みたいとき</div>
+      <pre class="prompt" id="pp22">以下は【企業名】との商談メモです。この内容から、相手の課題・要望・予算感・決裁フローを整理した上で、提案の骨子（課題認識／提案内容／概算費用感／次のステップ）を作成してください。
+
+【ここに商談メモを貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp22', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">23. 見積書の内容チェックと説明文作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 見積書を送る前に金額の妥当性や説明不足がないか確認したいとき</div>
+      <pre class="prompt" id="pp23">以下の見積内容について、①金額の内訳が顧客に分かりやすいか、②説明が不足していそうな項目、を指摘してください。その上で、見積書に添える送付メール文（300字程度）も作成してください。
+
+【ここに見積内容（項目・金額）を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp23', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">24. 競合比較資料の作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 提案の中で自社と競合の違いを整理して見せたいとき</div>
+      <pre class="prompt" id="pp24">自社【自社サービス名】と競合【競合サービス名】について、以下の情報をもとに比較表（比較項目／自社／競合／顧客にとっての意味）を作成してください。誇張せず、事実ベースで中立的な表現にしてください。
+
+自社の特徴: 【箇条書きで】
+競合の特徴: 【箇条書きで】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp24', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">25. 商談後のフォローアップメール作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 商談終了後、当日中にお礼と次のアクションを送りたいとき</div>
+      <pre class="prompt" id="pp25">以下の商談内容をもとに、フォローアップメールを作成してください。①本日の感謝、②話した内容の要点3つ、③次回までにこちらが準備すること、④次回のご都合を伺う一文、の順で300字程度にまとめてください。
+
+【ここに商談で話した内容の要点を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp25', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c6">
+    <div class="sec-h"><div class="no">6</div><h2>経理・総務</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">26. 経費精算の内容チェック</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 提出された経費申請に不備がないか確認したいとき</div>
+      <pre class="prompt" id="pp26">以下の経費申請内容について、社内規定（【規定の要点、例：交通費は実費、接待費は上限1万円/人】）と照らして、不備や確認が必要な項目を指摘してください。問題なければ「不備なし」と回答してください。
+
+【ここに経費申請の項目（日付・金額・用途）を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp26', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">27. 請求書メールの文面作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 取引先に請求書を送付する際の案内メールを作りたいとき</div>
+      <pre class="prompt" id="pp27">【取引先名】宛に、請求書（請求金額【金額】円、支払期限【期日】）を送付する案内メールを作成してください。丁寧なビジネス文体で、添付ファイルがあることを明記してください。</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp27', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">28. 社内規定・マニュアルのQA形式への変換</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 長い社内規定文書を問い合わせ対応用のQ&amp;A集にしたいとき</div>
+      <pre class="prompt" id="pp28">以下の社内規定文書から、社員からよく聞かれそうな質問を5つ想定し、それぞれに対する回答をこの文書の内容に基づいて作成してください。出力形式はQ&amp;A形式でお願いします。
+
+【ここに社内規定・マニュアル本文を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp28', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">29. 備品・契約更新のリマインド文作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 契約更新やライセンス更新の社内通知を出したいとき</div>
+      <pre class="prompt" id="pp29">【契約・サービス名】の更新期限が【期日】に迫っていることを関係者に知らせる社内通知メールを作成してください。対応が必要な担当者への依頼事項（更新の要否確認、承認フローなど）を箇条書きで含めてください。</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp29', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">30. 総務問い合わせメールの一次回答文作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 社員からの総務系の問い合わせに定型的な一次回答をしたいとき</div>
+      <pre class="prompt" id="pp30">以下の社員からの問い合わせ内容に対して、社内規定（【関連規定の要点】）に基づいた一次回答文を作成してください。規定に明記がない場合は「担当部署に確認の上、改めて連絡する」旨を記載してください。
+
+問い合わせ内容: 【ここに貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp30', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c7">
+    <div class="sec-h"><div class="no">7</div><h2>人事・採用</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">31. 求人票の叩き台作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 新規ポジションの求人票を一から作るとき</div>
+      <pre class="prompt" id="pp31">以下の情報をもとに求人票の叩き台を作成してください。構成は「募集背景」「業務内容」「求めるスキル・経験」「歓迎条件」「働き方・待遇」の5項目でお願いします。
+
+職種: 【職種名】
+募集背景: 【背景】
+必須スキル: 【箇条書きで】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp31', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">32. 応募書類（履歴書・職務経歴書）の要点整理</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 大量の応募書類から面接前に要点だけ把握したいとき</div>
+      <pre class="prompt" id="pp32">以下の職務経歴書の内容から、①これまでの経験年数と職種、②募集ポジション（【募集ポジション名】）との関連が強いスキル・経験、③面接で確認したい点、を箇条書きで整理してください。
+
+【ここに職務経歴書の内容を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp32', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">33. 面接の質問リスト作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 面接前に候補者に応じた質問を準備したいとき</div>
+      <pre class="prompt" id="pp33">以下の候補者の経歴と、募集ポジション（【募集ポジション名】）の要件をもとに、面接で聞くべき質問を【質問数】個作成してください。経験の深掘り質問と、カルチャーフィットを見る質問をバランスよく含めてください。
+
+候補者の経歴: 【ここに貼り付け】
+募集要件: 【ここに貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp33', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">34. 新入社員向けオンボーディング案内文作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 入社日が近い新入社員に事前案内を送りたいとき</div>
+      <pre class="prompt" id="pp34">【入社予定日】に入社する新入社員に向けて、初日の流れ（集合時間・場所・持ち物・当日のスケジュール概要）を案内するメールを作成してください。丁寧かつ緊張を和らげる柔らかいトーンでお願いします。
+
+初日の流れ: 【箇条書きで】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp34', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">35. 人事評価コメントのドラフト作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 評価シートに書くコメントの言葉選びに迷うとき</div>
+      <pre class="prompt" id="pp35">以下の業務実績のメモをもとに、人事評価コメント（150字程度）のドラフトを作成してください。良かった点を具体的に、改善点は次期への期待として前向きな表現でまとめてください。
+
+【ここに業務実績のメモを貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp35', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c8">
+    <div class="sec-h"><div class="no">8</div><h2>カスタマーサポート</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">36. 問い合わせ内容の分類と優先度付け</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 大量の問い合わせメールをさばく前に仕分けしたいとき</div>
+      <pre class="prompt" id="pp36">以下の複数の問い合わせ内容を、カテゴリ（【カテゴリ例：不具合／使い方／請求／解約】）ごとに分類し、対応優先度（高・中・低）を付けて表形式で出力してください。
+
+【ここに複数件の問い合わせ内容を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp36', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">37. クレーム対応メールの下書き作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: お客様からのクレームに対して慎重な返信を準備したいとき</div>
+      <pre class="prompt" id="pp37">以下のクレーム内容に対する返信メールの下書きを作成してください。①まずお詫びの言葉、②状況確認のための質問、③今後の対応方針、の順で構成し、言い訳がましい表現は避けてください。文字数は300字程度でお願いします。
+
+クレーム内容: 【ここに貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp37', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">38. FAQ・よくある質問集の作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 過去の問い合わせ履歴からFAQページの原案を作りたいとき</div>
+      <pre class="prompt" id="pp38">以下は過去の問い合わせ履歴です。この中から頻度が高い質問を上位【件数】件選び、Q&amp;A形式（質問／回答）でまとめてください。回答は初めて見る顧客にも分かる言葉で書いてください。
+
+【ここに過去の問い合わせ履歴を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp38', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">39. 問い合わせ対応の一次回答テンプレート作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 対応まで時間がかかる問い合わせに、まず受付連絡を送りたいとき</div>
+      <pre class="prompt" id="pp39">以下の問い合わせ内容に対して、「受付は完了したこと」「回答までにかかる目安の日数（【日数】日）」「緊急の場合の連絡先」を含む一次回答メールのテンプレートを作成してください。
+
+問い合わせ内容: 【ここに貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp39', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">40. 顧客対応履歴からの傾向分析</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 一定期間の対応履歴から改善点を見つけたいとき</div>
+      <pre class="prompt" id="pp40">以下は【期間】分の顧客対応履歴です。この中から繰り返し発生している問題を3つ挙げ、それぞれの原因として考えられることと、再発防止のためにできそうな対応策を箇条書きで提示してください。
+
+【ここに対応履歴を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp40', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c9">
+    <div class="sec-h"><div class="no">9</div><h2>マーケティング・SNS</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">41. ブログ記事からSNS投稿文への要約</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 長い記事をSNS用に短く要約したいとき</div>
+      <pre class="prompt" id="pp41">以下のブログ記事の内容を、【X（Twitter）／Instagram／LinkedIn】投稿用に140字程度で要約してください。読者の興味を引く一文を冒頭に置き、最後に記事へのリンクを貼るスペースとして「【URL】」と記載してください。
+
+【ここにブログ記事本文を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp41', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">42. 商品・サービス紹介文のバリエーション作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 同じ商品説明を複数パターン用意してテストしたいとき</div>
+      <pre class="prompt" id="pp42">以下の商品情報をもとに、SNS投稿用の紹介文を【本数】パターン作成してください。それぞれ切り口（例：機能重視／利用シーン重視／お客様の声重視）を変え、各150字以内にしてください。
+
+商品情報: 【ここに貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp42', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">43. メールマガジンの構成案作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 定期配信するメルマガの構成を考えるとき</div>
+      <pre class="prompt" id="pp43">【今月のテーマ】に関するメールマガジンの構成案を作成してください。構成は「件名案（3パターン）」「導入文」「本文の見出し3つとそれぞれの要約」「締めの一文（行動喚起）」でお願いします。</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp43', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">44. アンケート・レビュー結果の要約</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 顧客アンケートやレビューの自由記述をまとめたいとき</div>
+      <pre class="prompt" id="pp44">以下のアンケート自由記述回答をもとに、①好評だった点の上位3つ、②改善要望の上位3つ、を件数の目安とともに箇条書きでまとめてください。個別の回答をそのまま引用せず、傾向として要約してください。
+
+【ここにアンケート自由記述回答を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp44', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">45. 競合のSNS投稿・広告文の傾向分析</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 競合のSNS発信内容から自社の参考にしたいとき</div>
+      <pre class="prompt" id="pp45">以下は競合【競合名】のSNS投稿文をいくつか集めたものです。この投稿群から、①よく使われている訴求ポイント、②投稿のトーン（フォーマル／カジュアル等）、③自社が参考にできそうな要素、を整理してください。
+
+【ここに競合のSNS投稿文を複数貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp45', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section id="c10">
+    <div class="sec-h"><div class="no">10</div><h2>経営・企画（NotebookLM活用含む）</h2></div>
+    <div class="igrid">
+    <div class="icard">
+      <div class="ititle">46. 複数資料を横断した論点整理</div>
+      <div class="imeta">対象: <b>Gemini（NotebookLM）</b> ｜ 場面: 複数の社内資料・議事録を一括で読み込んで論点を整理したいとき</div>
+      <pre class="prompt" id="pp46">アップロードした資料（【資料の種類、例：過去3回分の経営会議議事録】）全体を通して、①繰り返し議論されているが結論が出ていない論点、②すでに合意されている方針、③資料間で矛盾している記述、の3つに分けて整理してください。</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp46', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">47. 経営会議向け報告資料の要約</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: 部門の状況を経営層向けに簡潔に報告したいとき</div>
+      <pre class="prompt" id="pp47">以下の部門レポートを、経営会議で使う報告資料用に要約してください。構成は「今月のサマリー（3行）」「主要指標の増減」「課題」「来月のアクション」とし、全体で300字以内にしてください。
+
+【ここに部門レポートの内容を貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp47', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">48. 新規事業アイデアの壁打ち相手として整理</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: アイデア段階の事業案を整理してもらいたいとき</div>
+      <pre class="prompt" id="pp48">以下の新規事業アイデアについて、①想定される顧客層、②解決しようとしている課題、③考えられるリスクや懸念点、④検証すべき最初のステップ、の4点で整理してください。良い点・悪い点どちらも率直に指摘してください。
+
+事業アイデア: 【ここに貼り付け】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp48', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">49. 社内資料をもとにしたQ&amp;A想定問答集作成</div>
+      <div class="imeta">対象: <b>Gemini（NotebookLM）</b> ｜ 場面: 説明会や役員報告の前に想定質問への回答を準備したいとき</div>
+      <pre class="prompt" id="pp49">アップロードした資料（【資料名】）の内容をもとに、【説明会／役員会議】で聞かれそうな質問を【件数】個想定し、資料の内容に基づいた回答案を作成してください。資料に記載がない内容は無理に答えず「資料には記載なし」と明記してください。</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp49', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    <div class="icard">
+      <div class="ititle">50. 中期計画・企画書のたたき台作成</div>
+      <div class="imeta">対象: <b>両方</b> ｜ 場面: ゼロから中期計画や企画書の骨子を作りたいとき</div>
+      <pre class="prompt" id="pp50">以下の情報をもとに、【対象期間、例：3か年】の中期計画のたたき台を作成してください。構成は「現状分析」「目指す姿」「重点施策（3つ）」「施策ごとの概算スケジュール」でお願いします。
+
+現状の情報: 【ここに事業の現状や課題を箇条書きで貼り付け】
+目指したい方向性: 【ここに簡単な方向性を記載】</pre>
+      <div class="btns"><button class="btn sm" onclick="copyPrompt('pp50', this)">📋 このプロンプトをコピー</button></div>
+    </div>
+    </div>
+  </section>
+  <section>
+    <div class="box"><h3>使うときの注意</h3><ul><li>AIの出力は人が確認してから社外に出してください</li><li>顧客の実データ・個人情報をそのまま生成AIに貼らない運用ルールを最初に決めてください</li></ul></div>
+  </section>
+
+  <footer>
+    <div class="frow">
+      <div class="lg"><img src="data:image/jpeg;base64,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" alt="ClaudeCodeチャンネル"><b>ClaudeCodeチャンネル<small>Claude Code を学ぶ</small></b></div>
+      <a class="cta" href="https://www.youtube.com/@claudecode">&lt;/&gt; チャンネル登録</a>
+    </div>
+    <p class="src">解説の全文（README）・スライド・1枚資料: <a href="https://github.com/fuuuuuuma/ai-consulting-guide-2026">github.com/fuuuuuuma/ai-consulting-guide-2026</a><br>
+      株式会社エヌイチのサービス・採用: <a href="https://n1-inc.co.jp/">n1-inc.co.jp</a></p>
+  </footer>
+</div>
+<script>
+function copyTextWithFallback(text){
+  function fallback(){
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      return ok;
+    } catch(e){ return false; }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text).then(() => true).catch(fallback);
+  }
+  return Promise.resolve(fallback());
+}
+function showCopyResult(btn, ok){
+  const orig = btn.textContent;
+  btn.textContent = ok ? '\u2714 コピー済' : '\u2716 失敗';
+  setTimeout(() => { btn.textContent = orig; }, ok ? 1500 : 3000);
+}
+async function copyPrompt(id, btn){
+  const ok = await copyTextWithFallback(document.getElementById(id).textContent);
+  showCopyResult(btn, ok);
+}
+async function copyRaw(text, btn){
+  const ok = await copyTextWithFallback(text);
+  showCopyResult(btn, ok);
+}
+function downloadText(id, filename, btn){
+  try {
+    const text = document.getElementById(id).textContent;
+    const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  } catch(e){
+    if(btn){ const orig = btn.textContent; btn.textContent = '\u2716 保存不可'; setTimeout(() => { btn.textContent = orig; }, 3000); }
+  }
+}
+</script>
+</body>
+</html>
