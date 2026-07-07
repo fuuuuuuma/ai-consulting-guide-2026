@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🎁 プレゼントキット — AIコンサルで月100万円を稼ぐ方法</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --brand:#D9774F; --brand-deep:#C15640; --brand-soft:rgba(217,119,79,.12); --brand-line:rgba(217,119,79,.30);
+    --accent:#D9774F; --accent-deep:#B24E33; --accent-soft:rgba(217,119,79,.16);
+    --bg:#F1ECE3; --paper:#FBF8F2; --ink:#2A2620; --ink-mid:#6E6557; --line:#E4D9C7; --head:'M PLUS Rounded 1c'; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;}
+  .doc{max-width:880px;margin:0 auto;background:var(--paper);box-shadow:0 0 60px rgba(0,0,0,.10);}
+  .hero{position:relative;background:linear-gradient(160deg,var(--brand-soft) 0%,var(--bg) 70%);padding:46px 52px 40px;border-bottom:3px solid var(--brand-line);overflow:hidden;}
+  .hero .coin{position:absolute;width:160px;height:160px;border-radius:50%;background:var(--accent);opacity:.15;top:-52px;right:-36px;}
+  .hero .chan{display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .hero .chan img{width:50px;height:50px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.16);}
+  .hero .chan b{font-family:var(--head);font-weight:900;color:var(--brand-deep);font-size:17px;}
+  .hero .chan b small{display:block;font-size:11px;color:var(--ink-mid);font-weight:500;}
+  h1{font-family:var(--head);font-weight:900;font-size:34px;line-height:1.3;}
+  h1 .hl{color:var(--brand-deep);}
+  .hero p.sub{font-size:16px;color:var(--ink-mid);font-weight:700;margin-top:12px;max-width:680px;}
+  .meta{margin-top:16px;display:flex;gap:9px;flex-wrap:wrap;}
+  .meta span{background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:5px 14px;font-size:12.5px;font-weight:700;color:var(--ink-mid);}
+  .meta span.k{background:var(--accent-soft);border-color:var(--accent);color:var(--ink);}
+  .tocbar{background:var(--brand-soft);border-bottom:1px solid var(--line);padding:14px 52px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tocbar a{font-size:12.5px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 12px;}
+  .tocbar a:hover{border-color:var(--brand);}
+  section{padding:36px 52px;border-bottom:1px solid var(--line);}
+  .sec-h{display:flex;align-items:center;gap:13px;margin-bottom:14px;}
+  .sec-h .no{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--ink);font-family:var(--head);font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 0 var(--accent-deep);}
+  .sec-h h2{font-family:var(--head);font-weight:900;font-size:22px;color:var(--ink);}
+  p.body{font-size:15px;color:var(--ink);margin-bottom:10px;}
+  .checks{list-style:none;margin-bottom:14px;}
+  .checks li{font-size:14px;color:var(--ink);padding:5px 0 5px 24px;position:relative;}
+  .checks li::before{content:'✔';position:absolute;left:2px;color:var(--brand);font-weight:900;}
+  pre.prompt{background:var(--ink);color:#ECECEA;border-radius:12px;padding:16px 18px;white-space:pre-wrap;word-break:break-word;
+    font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.6;max-height:420px;overflow-y:auto;}
+  .btns{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);border:2px solid var(--accent-deep);color:var(--ink);
+    border-radius:999px;padding:10px 22px;font-family:var(--head);font-weight:900;font-size:14px;cursor:pointer;}
+  .btn.ghost{background:var(--paper);border:1.5px solid var(--line);color:var(--brand-deep);}
+  .btn:hover{filter:brightness(1.04);}
+  .steps{list-style:none;}
+  .steps li{font-size:14.5px;font-weight:600;color:var(--ink);padding:10px 14px 10px 48px;position:relative;margin-bottom:8px;background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:11px;}
+  .steps li .n{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:26px;height:26px;background:var(--accent);color:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:900;font-size:13px;}
+  .box{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:12px;padding:16px 20px;margin-top:16px;}
+  .box h3{font-family:var(--head);font-weight:900;color:var(--accent-deep);font-size:15px;margin-bottom:6px;}
+  .box ul{margin-left:18px;font-size:13.5px;color:var(--ink);}
+  footer{background:var(--ink);color:#EBEBE7;padding:32px 52px;}
+  footer .frow{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;}
+  footer .lg{display:flex;align-items:center;gap:11px;} footer .lg img{width:42px;height:42px;border-radius:50%;}
+  footer .lg b{font-family:var(--head);font-weight:900;color:#fff;font-size:15px;} footer .lg b small{display:block;font-size:11px;color:#9C9C96;font-weight:500;}
+  footer .cta{background:var(--accent);color:var(--ink);border-radius:999px;padding:10px 22px;font-family:var(--head);font-weight:900;font-size:13.5px;text-decoration:none;}
+  footer .src{font-size:12px;color:#9C9C96;margin-top:14px;line-height:1.8;} footer .src a{color:var(--accent);text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="doc">
+  <div class="hero">
+    <span class="coin"></span>
+    <div class="chan"><img src="data:image/jpeg;base64,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" alt="ClaudeCodeチャンネル"><b>ClaudeCodeチャンネル<small>Claude Code を学ぶ</small></b></div>
+    <h1>🎁 プレゼントキット<br><span class="hl">AIコンサルで月100万円を稼ぐ方法</span> 7点セット</h1>
+    <p class="sub">動画で解説した内容を「読んで終わり」にしないための実務セットです。すべて下のボタンからワンクリックのコピー、またはファイルダウンロードで受け取れます。</p>
+    <div class="meta"><span class="k">全7点・無料</span><span>コピペ＆ダウンロード両対応</span><span>商用の営業活動にそのまま使えます</span></div>
+  </div>
+  <div class="tocbar">
+    <a href="#kit1">① 営業先URL集</a><a href="#kit2">② 営業文テンプレ</a><a href="#kit3">③ 顧問メニュー表</a><a href="#kit4">④ プロンプト50選</a>
+    <a href="#kit5">⑤ 職種別活用例50</a><a href="#kit6">⑥ Claude Code連携術</a><a href="#kit7">⑦ ヒアリングシート</a>
+  </div>
+  <section id="kit1">
+    <div class="sec-h"><div class="no">1</div><h2>営業先URLまとめ</h2></div>
+    <p class="body">商工会議所・士業団体・公的支援機関・マッチングサイト・セミナー集客まで、AIコンサルの案件獲得チャネルになる実在サイトのURL集です（全件到達確認済み）。</p>
+    <ul class="checks"><li>公的支援・商工会議所・士業団体・経営者コミュニティ・マッチング・セミナー集客の6カテゴリ</li><li>各URLに「AIコンサルとしてどう使うか」の一言つき</li><li>まずは地域×1つ＋オンライン×1つの2チャネルから</li></ul>
+    <pre class="prompt" id="p1"># 🎁 営業先URLまとめ — AIコンサルの案件獲得チャネル一覧
+
+中小企業向け生成AI導入支援（AIコンサル）を始める方向けに、営業先や案件獲得のきっかけになる実在サイトをカテゴリ別にまとめました。
+
+**受け取り方**: このファイルをそのまま保存して使えます。
+
+**使い方**:
+- まずは「自分の地域×1つ」「オンライン×1つ」の計2チャネルから始めてみましょう。
+- 地域チャネルは、地元の商工会議所・商工会や士業団体への接点づくりから。オンラインチャネルは、スポットコンサルやセミナー集客プラットフォームへの登録から始めるのが取り組みやすいです。
+- 一度に全部を使おうとせず、2〜3週間ごとに1チャネルずつ増やしていくと、負担なく続けられます。
+- 「登録・登壇できる場」と「相談者が集まる場」は別物なので、両方をバランスよく組み合わせるのがポイントです。
+
+---
+
+## 1. 公的な中小企業支援の入口
+
+支援機関に専門家として登録したり、補助金がらみの相談需要を拾ったりする観点で使えます。
+
+| サイト名 | URL | AIコンサルとしての使い方 |
+|---|---|---|
+| 中小企業基盤整備機構（中小機構） | https://www.smrj.go.jp/ | 専門家派遣・ハンズオン支援などの制度を確認し、支援機関向けの登録・協力の窓口を探す起点にする |
+| よろず支援拠点 | https://yorozu.smrj.go.jp/ | 都道府県ごとの拠点一覧から地元拠点に相談員登録の可否を問い合わせ、相談需要の入口にする |
+| ミラサポplus | https://mirasapo-plus.go.jp/ | 中小企業向け経営相談・支援情報サイトを定点観測し、AI活用の相談ニーズが出ていないか確認する |
+| IT導入補助金（デジタル化・AI導入支援事業） | https://it-shien.smrj.go.jp/ | 補助金を使ってAIツール導入を検討する事業者の存在を把握し、導入支援・申請サポートの提案につなげる |
+
+## 2. 商工会議所・商工会
+
+セミナー登壇や会員交流の入口として使えます。
+
+| サイト名 | URL | AIコンサルとしての使い方 |
+|---|---|---|
+| 日本商工会議所 | https://www.jcci.or.jp/ | 全国の商工会議所ネットワークの全体像を把握し、地元の商工会議所を探す起点にする |
+| 全国商工会連合会 | https://www.shokokai.or.jp/ | 商工会向けの経営相談・販路開拓支援の枠組みを確認し、地域の商工会への接点を探す |
+| 東京商工会議所 | https://www.tokyo-cci.or.jp/ | セミナー・勉強会の開催案内をチェックし、会員向け講師やAI活用セミナーの登壇機会を探す |
+
+## 3. 士業の団体
+
+提携先探しの起点として使えます。
+
+| サイト名 | URL | AIコンサルとしての使い方 |
+|---|---|---|
+| 日本税理士会連合会 | https://www.nichizeiren.or.jp/ | 顧問先の中小企業を多く持つ税理士との連携先を探し、AI導入提案の紹介ルートを作る |
+| 全国社会保険労務士会連合会 | https://www.shakaihokenroumushi.jp/ | 労務管理を担う社労士との協業を通じて、バックオフィスのAI活用提案の接点を持つ |
+| 日本行政書士会連合会 | https://www.gyosei.or.jp/ | 許認可・書類作成を扱う行政書士との連携で、業務効率化ニーズのある事業者につなげてもらう |
+
+## 4. 経営者コミュニティ
+
+| サイト名 | URL | AIコンサルとしての使い方 |
+|---|---|---|
+| 中小企業家同友会全国協議会 | https://www.doyu.jp/ | 経営者同士の学び合いの場に参加し、自社のAI活用事例を共有しながら信頼関係を作る |
+| 日本青年会議所 | https://www.jaycee.or.jp/ | 各地の青年会議所の活動を確認し、経営者ネットワークとの接点や登壇機会を探す |
+| BNIジャパン | https://bni.jp/ | 全国のチャプター見学に参加し、リファーラル（紹介）を通じて継続的な案件相談につなげる |
+| 日本商工会議所青年部（日本YEG） | https://www.yeg.jp/ | 全国の単会（YEG）の活動を確認し、経営者コミュニティ内でのAI活用勉強会の開催を提案する |
+
+## 5. スポットコンサル・仕事マッチング
+
+| サイト名 | URL | AIコンサルとしての使い方 |
+|---|---|---|
+| ビザスクexpert | https://expert.visasq.com/ | 専門家（エキスパート）登録をして、1時間からのスポット相談案件でAI導入相談を受ける |
+| ココナラ | https://coconala.com/ | コンサルティング・IT相談カテゴリでサービスを出品し、小さな相談から実績と評判を積む |
+| ランサーズ | https://www.lancers.jp/ | 経営・ITコンサルのカテゴリに登録し、AI導入診断や業務効率化提案の案件を探す |
+| クラウドワークス | https://crowdworks.co.jp/ | 生産性向上・経営支援に関連する案件を探し、フリーランスとして実務からAI活用ニーズを拾う |
+
+## 6. セミナー集客プラットフォーム
+
+| サイト名 | URL | AIコンサルとしての使い方 |
+|---|---|---|
+| ストアカ | https://www.street-academy.com/ | 「中小企業のためのAI活用入門」のような単発講座を開き、受講者との個別相談につなげる |
+| Peatix | https://peatix.com/ | 無料または低価格のAI勉強会イベントを主催し、参加者リストから見込み客を育てる |
+| こくちーずプロ | https://www.kokuchpro.com/ | 地域密着のセミナー告知に活用し、対面での経営者向けAI活用セミナーの集客に使う |
+| Doorkeeper | https://www.doorkeeper.jp/ | 継続開催の勉強会コミュニティを作り、定期的にAI活用ノウハウを発信して関係を深める |
+
+---
+
+**ポイント**: どのチャネルも「登録・参加してすぐ案件」ではなく、継続的に顔を出したり発信したりする中で信頼が生まれ、相談につながっていくものです。焦らず、まずは2チャネルの継続から始めてみてください。
+</pre>
+    <div class="btns">
+      <button class="btn" onclick="copyPrompt('p1', this)">📋 コピー</button>
+      <button class="btn ghost" onclick="downloadText('p1','eigyosaki-urls.md', this)">⬇ ダウンロード（.md）</button>
+    </div>
+  </section>
+  <section id="kit2">
+    <div class="sec-h"><div class="no">2</div><h2>営業文の完全テンプレート（7本）</h2></div>
+    <p class="body">初回打診・コールドメール・士業提携・セミナー後フォロー・紹介依頼・SNSのDM・提案書骨子の7本。「時間が返ってくる話」を軸にした、そのまま送れる文面です。</p>
+    <ul class="checks"><li>差し込み箇所は【会社名】【相手名】形式で統一</li><li>M365/Google Workspace利用企業向けの「実はもう入っている」切り口</li><li>提案書の骨子（見出し構成）つき</li></ul>
+    <pre class="prompt" id="p2"># 🎁 営業文の完全テンプレート
+
+AIコンサル（中小企業向け生成AI導入支援）を始める人のための、そのまま使える営業文集です。売り込みではなく「時間が返ってくる話」を軸にした7本のテンプレートを収録しています。
+
+**受け取り方**: 下のコードブロックをコピーするか、このファイルを保存してください。
+
+---
+
+## ① 知り合い・取引先への初回打診メール
+
+**使う場面**: すでに面識がある相手に、新しく始めたAI導入支援の仕事をさりげなく知らせたいとき。
+
+```text
+件名: 【ご報告】最近、AI活用のお手伝いを始めました
+
+【相手名】様
+
+お世話になっております。【自分の名前】です。
+
+ご無沙汰しておりますが、いかがお過ごしでしょうか。
+
+突然のご連絡で恐縮ですが、最近、中小企業向けに生成AIの導入サポートを
+始めましたのでご報告させてください。
+
+きっかけは、身近な会社の議事録作成に生成AIを使ってみたところ、
+毎回1時間かかっていた作業が10分程度で終わるようになったことでした。
+特別なシステム導入ではなく、今お使いのパソコンやツールの中でできる
+工夫が中心です。
+
+【相手名】様の会社でも、日々の書類作成や情報整理に時間がかかっている
+場面があれば、一度立ち話程度でも構いませんのでお聞かせいただけると
+嬉しいです。無理に何かをご提案するものではなく、まずは近況報告として
+お伝えしたく連絡いたしました。
+
+またお会いできる機会があれば、そのときにでも詳しくお話しできればと
+思います。
+
+引き続きよろしくお願いいたします。
+
+【自分の名前】
+```
+
+**カスタマイズのコツ**: 「きっかけ」の部分は自分が実際に体験した具体例に差し替えると、初回打診でも信頼感が一段上がります。
+
+---
+
+## ② 地域の中小企業向けコールドメール（M365/Google Workspace利用企業向け）
+
+**使う場面**: 面識のない地域の中小企業に対して、「すでに契約している環境の中でAIが使える」という切り口で最初の接点を作りたいとき。
+
+```text
+件名: 【御社の環境で使えるかも】すでにお使いのツールにAI機能が入っています
+
+【会社名】
+【相手名】様
+
+はじめまして。【自分の名前】と申します。中小企業向けに生成AIの
+導入サポートを行っております。
+
+不躾なご連絡で恐縮ですが、1点だけお伝えしたいことがありご連絡いたしました。
+
+御社では Microsoft 365 や Google Workspace をお使いかと思いますが、
+実はその契約の中に、すでに生成AIの機能が含まれているケースが多くあります。
+新しく何かを契約したり、追加費用を払ったりする前に、
+「今の環境の中で使えるAI」を確認するだけで、議事録作成・メール下書き・
+資料の要約といった作業時間を大きく減らせることがあります。
+
+たとえば議事録であれば、1時間の会議の要点整理が数分で終わる
+デモを実際にお見せすることができます。
+
+もしご興味があれば、15分ほどオンラインか御社にお伺いする形で、
+【会社名】の環境で実際に何ができるかを一緒に確認させていただけないでしょうか。
+契約や導入の話は抜きにして、まずは「今あるものの棚卸し」だけでも
+お役に立てるかと思います。
+
+ご検討いただけますと幸いです。
+
+【自分の名前】
+【業務名】
+```
+
+**カスタマイズのコツ**: 件名と冒頭の「すでにお使いの契約の中に」という一文は削らずに残すと、警戒感より興味が先に立ちやすくなります。
+
+---
+
+## ③ 税理士・社労士への提携打診メール（顧問先向け共催セミナー提案）
+
+**使う場面**: 顧問先を多く抱える士業と提携し、共催セミナーという形で複数社にまとめてリーチしたいとき。
+
+```text
+件名: 顧問先様向け「AI活用セミナー」共催のご相談
+
+【会社名】
+【相手名】先生
+
+はじめまして。【自分の名前】と申します。
+中小企業向けに生成AIの導入支援をしております【業務名】です。
+
+【相手名】先生が多くの顧問先企業様と日頃から深い関係を築かれていると
+伺い、ご連絡させていただきました。
+
+現在、多くの中小企業では「議事録・書類作成・情報整理」に想像以上の
+時間が取られています。生成AIを使うことで、こうした時間を大きく
+圧縮できるケースが増えているのですが、経営者の方々にとっては
+何から手をつけてよいか分からない、というお悩みをよく伺います。
+
+そこで、【相手名】先生の顧問先企業様向けに、AI活用の基礎を
+分かりやすくお伝えする無料相談会形式のセミナーを共催させて
+いただけないかと考えております。
+
+先生にとっては、顧問先様への付加価値提供の一環としてご案内いただき、
+私の方でセミナーの企画・実施を担当する形を想定しております。
+費用や進め方の詳細は、まず一度お電話かオンラインで
+15分程度お打ち合わせさせていただけますと幸いです。
+
+ご多忙のところ恐縮ですが、ご検討いただけますと幸いです。
+
+【自分の名前】
+【業務名】
+```
+
+**カスタマイズのコツ**: 「先生にとっての価値」を先に書き、自分の売り込みは最後に回すと、士業特有の警戒感が和らぎます。
+
+---
+
+## ④ セミナー後の個別相談フォローメール
+
+**使う場面**: セミナーや相談会に参加してくれた相手に、日を空けずに個別相談へつなげたいとき。
+
+```text
+件名: 【御礼】本日はセミナーにご参加いただきありがとうございました
+
+【相手名】様
+
+本日はお忙しい中、セミナーにご参加いただきありがとうございました。
+【自分の名前】です。
+
+当日は駆け足でのご説明となった部分もあったかと思いますので、
+改めて簡単にポイントを振り返らせていただきます。
+
+・すでにお使いのツールの中でAIが使えるケースが多いこと
+・議事録や資料作成など、日々の「時間がかかる作業」から着手すると
+　効果が分かりやすいこと
+・大きな投資をする前に、まず小さく試して効果を確認できること
+
+【会社名】の業務内容やお悩みに合わせて、どこから着手すると
+時間を減らせそうか、個別に30分程度お話しさせていただくことも
+可能です。ご希望であれば、今週・来週で候補日をいくつか
+お送りいたします。
+
+もちろん「まだ検討中」というだけでも構いませんので、
+気になる点があればお気軽にご返信ください。
+
+本日は貴重なお時間をいただき、ありがとうございました。
+
+【自分の名前】
+【業務名】
+```
+
+**カスタマイズのコツ**: セミナー中に相手が質問した内容や反応があれば、振り返り箇条書きの1項目をその内容に差し替えると「自分ごと化」しやすくなります。
+
+---
+
+## ⑤ 既存顧客への紹介依頼メール
+
+**使う場面**: すでに支援している顧客との関係が良好なタイミングで、次の顧客につながる紹介をお願いしたいとき。
+
+```text
+件名: いつもありがとうございます。1つだけお願いがございます
+
+【会社名】
+【相手名】様
+
+いつも大変お世話になっております。【自分の名前】です。
+
+おかげさまで【会社名】様でのAI活用のお手伝いも進み、
+最初にお伺いしていたお悩みが少しずつ形になってきていることを
+大変嬉しく思っております。
+
+本日は1つだけお願いがございます。
+
+もし【相手名】様の周りで、「うちも書類作成や議事録に時間が
+かかっていて」といった話をされている経営者の方や知人企業様が
+いらっしゃいましたら、一度お引き合わせいただくことは可能でしょうか。
+
+大きな契約や高額な費用が発生するものではなく、まずは現状を
+15分程度お聞きして、今の環境の中で何ができそうかをお伝えする
+だけの気軽な形で構いません。
+
+もちろん無理にとは申しません。もし思い当たる方がいらっしゃれば、
+という程度で構いませんので、頭の片隅に置いていただけますと幸いです。
+
+引き続き【会社名】様のお役に立てるよう努めてまいります。
+今後ともよろしくお願いいたします。
+
+【自分の名前】
+【業務名】
+```
+
+**カスタマイズのコツ**: 依頼だけで終わらせず、直前の段落で相手の成果や進捗に触れると、お願いされた側の心理的ハードルが下がります。
+
+---
+
+## ⑥ SNSのDM用短文（3パターン）
+
+**使う場面**: X・LinkedIn・Instagramなど、SNS上で軽く接点を持ちたい相手に短い一言を送るとき。プラットフォームごとの雰囲気に合わせて使い分けます。
+
+### X（カジュアル・フランク寄り）
+
+```text
+はじめまして、【自分の名前】です！
+中小企業向けにAI導入のお手伝いをしています。
+
+投稿拝見しました。【会社名】さんくらいの規模だと、
+議事録や資料作成にけっこう時間かかってませんか?
+すでにお使いのツールの中だけでも時間が減らせるケースが
+多いので、よければ気軽に話してみませんか。
+```
+
+### LinkedIn風（ビジネスライク）
+
+```text
+【相手名】様
+
+はじめまして。【自分の名前】と申します。
+中小企業向けに生成AIの導入支援を行っております【業務名】です。
+
+【会社名】様のお取り組みを拝見し、ご連絡させていただきました。
+議事録作成や資料整理など、日々の業務時間を圧縮できる
+生成AI活用について、貴社の環境に合わせた具体例をお伝えできればと
+考えております。
+
+もしご興味がございましたら、15分ほど簡単にお話しできる
+機会をいただけますと幸いです。
+```
+
+### Instagram（親しみやすさ重視）
+
+```text
+はじめまして！【自分の名前】です😊
+中小企業さん向けにAI活用のお手伝いをしています。
+
+投稿見て気になったのでご連絡しました。
+議事録とか資料作りって地味に時間かかりますよね。
+実はもう契約してるツールの中にAI機能が
+入ってることが多くて、そこから始めると
+負担少なく試せますよ。よかったら少しお話ししませんか?
+```
+
+**カスタマイズのコツ**: DMは長文にせず5〜7行以内に収め、最初の1通では具体的な料金や契約の話を出さないのが返信率を上げるポイントです。
+
+---
+
+## ⑦ 提案書の骨子（見出し構成と各見出しに書くこと）
+
+**使う場面**: 個別相談やヒアリングを経て、正式な提案書を作成するとき。見出しの骨組みだけを先に固めておくと、内容を埋める作業が早くなります。
+
+```text
+提案書 構成テンプレート
+
+1. 表紙
+   ・【会社名】御中、提案タイトル、提出日、【自分の名前】/【業務名】を記載
+
+2. はじめに（ヒアリング内容の確認）
+   ・打ち合わせで伺った現状の課題を箇条書きで要約
+   ・「認識のズレがないか」を先方に確認してもらう位置づけで書く
+
+3. 現状の課題整理
+   ・具体的な業務（議事録・資料作成・問い合わせ対応など）ごとに
+     かかっている時間や手間を整理
+   ・数値化できる部分は「週◯時間」など具体的に記載
+
+4. 提案内容
+   ・すでにお使いの環境（M365 / Google Workspace など）の中で
+     まず着手できることを最初に提示
+   ・追加ツールや契約が必要な場合は、その理由と効果を分けて説明
+
+5. 導入ステップ（スケジュール）
+   ・小さく試す→効果を確認→範囲を広げる、の順で段階を示す
+   ・各ステップの期間目安を記載
+
+6. 想定される効果
+   ・時間削減や業務負担の軽減について、「見込み」であることが
+     分かる書き方で記載（断定した数値保証は書かない）
+
+7. 費用・契約条件
+   ・プラン内容と金額を明記(別紙の顧問契約メニュー表がある場合は
+     ここで案内)
+   ・支払いサイクルや契約期間の条件を記載
+
+8. よくある質問・不安点への回答
+   ・「効果が出なかったら」「使いこなせるか不安」などへの
+     回答をあらかじめ用意
+
+9. おわりに
+   ・改めて感謝を述べ、次のアクション（返信期限や次回打ち合わせ日）を明記
+```
+
+**カスタマイズのコツ**: 「6. 想定される効果」は必ず幅を持たせた表現にし、断定的な成果の約束は避けると後々のトラブルを防げます。
+
+---
+
+**ポイント**: どのテンプレートも「売り込み」ではなく「今あるものでどれだけ時間が浮くか」を先に伝える構成にしているので、差し込み箇所を埋めるだけで初回接触からセミナー後のフォローまで一気通貫で使えます。
+</pre>
+    <div class="btns">
+      <button class="btn" onclick="copyPrompt('p2', this)">📋 コピー</button>
+      <button class="btn ghost" onclick="downloadText('p2','eigyobun-templates.md', this)">⬇ ダウンロード（.md）</button>
+    </div>
+  </section>
+  <section id="kit3">
+    <div class="sec-h"><div class="no">3</div><h2>顧問契約メニュー表テンプレート</h2></div>
+    <p class="body">ライト／スタンダード／伴走フルの3プランで顧問契約を提示するための雛形です。価格欄は空欄式で、価格設定の考え方も添えてあります。</p>
+    <ul class="checks"><li>月次面談・質問対応・研修・レポートの構成例</li><li>価格は「実績づくり→実績3社で改定」の順で決める</li><li>WordやドキュメントにそのままAり付け可能</li></ul>
+    <pre class="prompt" id="p3"># 🎁 顧問契約メニュー表テンプレート
+
+AIコンサル（中小企業向け生成AI導入支援）の顧問契約を、ライト／スタンダード／伴走フルの3プランで提示するための料金メニュー表の雛形です。価格欄は空欄式にしてあるので、自分の状況に合わせて埋めてください。
+
+**受け取り方**: 下のコードブロックをコピーするか、このファイルを保存してください。
+
+```text
+=====================================================
+  AI活用 顧問契約メニュー
+=====================================================
+
+--------------------------------------------------
+【ライトプラン】
+--------------------------------------------------
+価格: ____円/月
+
+含まれるもの
+・月次面談: 月1回（30分/オンライン）
+・チャット・メールでの質問対応: 月5往復まで
+・研修: なし（必要に応じて別途相談）
+・レポート: なし
+・対応内容: すでにお使いのツール内でのAI活用に関する
+      簡単な質問対応、使い方のアドバイス
+
+こんな方向け
+・まずは小さく試してみたい方
+・特定の作業（議事録・メール作成など）だけ相談したい方
+
+--------------------------------------------------
+【スタンダードプラン】
+--------------------------------------------------
+価格: ____円/月
+
+含まれるもの
+・月次面談: 月2回（各45分/オンラインor訪問1回選択可）
+・チャット・メールでの質問対応: 随時（平日対応の目安あり）
+・研修: 3ヶ月に1回、社内向け簡易勉強会（1時間程度）
+・レポート: 月次で活用状況の簡易レポートを提供
+・対応内容: 複数業務（議事録・資料作成・情報整理など）への
+      横断的な活用提案、社内への浸透サポート
+
+こんな方向け
+・複数の業務にAIを広げていきたい方
+・社内のメンバーにも使い方を広めたい方
+
+--------------------------------------------------
+【伴走フルプラン】
+--------------------------------------------------
+価格: ____円/月
+
+含まれるもの
+・月次面談: 月4回（週1回/各45〜60分、訪問対応も相談可）
+・チャット・メールでの質問対応: 随時（優先対応）
+・研修: 毎月1回、社内向け勉強会・実践ワーク
+・レポート: 月次詳細レポート＋四半期ごとの振り返り面談
+・対応内容: 業務フロー全体の見直し、新しい活用場面の
+      継続的な発掘、社内の推進担当者の育成サポート
+
+こんな方向け
+・AI活用を会社の仕組みとして定着させたい方
+・継続的な伴走支援を受けながら進めたい方
+
+=====================================================
+  価格設定の考え方
+=====================================================
+
+1. まず自分の時間を「原価」として捉える
+   月に何時間その顧客に使うかを見積もり、その時間の価値を
+   自分の中で最低ラインとして持っておく
+
+2. 最初は「実績づくり価格」で始めてよい
+   契約実績・事例・声がまだない段階では、相場より低めの
+   価格で始め、経験と実例を優先して積み上げる
+
+3. 実績が3社たまったら、価格改定のタイミングを検討する
+   具体的な成功事例が3社分できた時点で、その事例を根拠に
+   価格を見直す
+
+4. 改定は「新規顧客から」適用する
+   既存の顧客の契約途中で急に値上げをするのではなく、
+   次の新規契約から新しい価格を適用するのが基本
+
+5. プラン間の価格差は「対応量の差」で説明できるようにする
+   面談回数・レポート有無・研修有無など、何が増えると
+   価格が上がるのかを自分の中で明確にしておく
+
+=====================================================
+```
+
+**ポイント**: 価格欄を空欄のまま渡すことで、面談の中で相手の予算感を聞きながら埋めていく使い方もでき、最初から数字を固定しないぶん商談の柔軟性が保てます。
+</pre>
+    <div class="btns">
+      <button class="btn" onclick="copyPrompt('p3', this)">📋 コピー</button>
+      <button class="btn ghost" onclick="downloadText('p3','komon-menu-template.md', this)">⬇ ダウンロード（.md）</button>
+    </div>
+  </section>
+  <section id="kit4">
+    <div class="sec-h"><div class="no">4</div><h2>Copilot・Gemini プロンプト50選</h2></div>
+    <p class="body">顧客企業（非エンジニアの社員さん）にそのまま配れる、部署別・コピペ即用の50本。会議・メール・Excel・資料作成から経営まで10カテゴリです。</p>
+    <ul class="checks"><li>10カテゴリ×5本＝50本</li><li>貼る素材と出力形式を指定した実務品質</li><li>Teams議事録・NotebookLMなどツール固有分は対象を明記</li></ul>
+    <pre class="prompt" id="p4"># 🎁 Copilot・Gemini プロンプト50選 — 部署別・コピペ即用
+
+Microsoft 365 Copilot と Gemini for Google Workspace のどちらでも使える、部署別の実務プロンプト集です。汎用的な書き方を基本にしつつ、ツール固有の機能（Teams議事録・NotebookLMなど）は対象ツールを明記しています。
+
+**受け取り方**: 各コードブロックをコピーするか、このファイルを保存してください。
+
+## 使い方3ステップ
+
+1. 自分の業務に近いものを選ぶ
+2. 【】部分を自社の情報に差し替える
+3. 出力は人が確認してから使う
+
+---
+
+## 1. 会議・議事録（Teams/Meet）
+
+### 1. 会議の要約と決定事項の抽出
+対象: 両方 ｜ 場面: 会議終了直後に要点を整理したいとき
+```text
+以下は【会議名】の文字起こしです。この内容から、①決定事項、②未決事項（誰が・いつまでに結論を出すか）、③次回までのアクションアイテム（担当者名付き）の3つを箇条書きで整理してください。それぞれ1項目20文字以内で簡潔にまとめてください。
+
+【ここに文字起こしまたは議事メモを貼り付け】
+```
+
+### 2. 議事録の清書とフォーマット統一
+対象: 両方 ｜ 場面: 手書きメモや箇条書きを正式な議事録形式に整えたいとき
+```text
+以下の会議メモを、社内標準の議事録フォーマット（日時／出席者／議題／議論内容／決定事項／宿題事項）に整形してください。文体は「です・ます調」で統一し、口語表現（「えーと」「なんか」等）は削除してください。
+
+【ここに会議メモを貼り付け】
+```
+
+### 3. Teams会議の自動生成議事録から次のアクションを抽出
+対象: Copilot（Teams） ｜ 場面: Teams会議終了後、自動生成された議事録から実務タスクだけを取り出したいとき
+```text
+このTeams会議の自動議事録から、【自分の部署名】に関係するタスクだけを抜き出して、表形式（タスク内容／担当者／期限／優先度）でまとめてください。担当者が明記されていない場合は「未定」と記載してください。
+
+【ここにTeams議事録の内容を貼り付け】
+```
+
+### 4. 複数回の会議内容を時系列で整理
+対象: 両方 ｜ 場面: 同じ案件で複数回開催した会議の流れを振り返りたいとき
+```text
+以下は【案件名】について過去【回数】回分の会議記録です。案件の論点がどう変化してきたかを時系列で整理し、①最初に決まっていたこと、②途中で変更になったこと（理由も含む）、③現時点で確定していることの3段階で400字程度にまとめてください。
+
+【ここに複数回分の会議記録を貼り付け】
+```
+
+### 5. 会議前のアジェンダ叩き台作成
+対象: 両方 ｜ 場面: 会議招集前に議題案を準備したいとき
+```text
+【会議の目的】について、参加者【参加者の役職・人数】向けの会議アジェンダ案を作成してください。所要時間は【会議時間】分を想定し、議題ごとに想定時間配分（分）を付けた箇条書きで出力してください。最後に「この会議で決めたいこと」を1文で明記してください。
+```
+
+---
+
+## 2. メール処理（Outlook/Gmail）
+
+### 6. 長文メールの要約
+対象: 両方 ｜ 場面: 長いメールスレッドの内容を素早く把握したいとき
+```text
+以下のメール本文を3行以内で要約してください。①誰から何の依頼・報告か、②求められている対応、③期限、の3点を含めてください。
+
+【ここにメール本文を貼り付け】
+```
+
+### 7. 依頼メールへの返信文ドラフト作成
+対象: 両方 ｜ 場面: 取引先からの依頼に対する返信を素早く作りたいとき
+```text
+以下のメールに対する返信文を作成してください。トーンは丁寧なビジネス文体、結論は「【承諾する／条件付きで承諾する／お断りする】」とし、理由を2文以内で添えてください。件名も含めて出力してください。
+
+【ここに元のメール本文を貼り付け】
+
+対応方針: 【自分が伝えたい要点を箇条書きで】
+```
+
+### 8. メールスレッド全体から未対応事項を洗い出す
+対象: 両方 ｜ 場面: 長期化した往復メールで対応漏れがないか確認したいとき
+```text
+以下は【取引先名】とのメールのやり取り全文です。この中でまだ返信・対応が済んでいない依頼事項を一覧化してください。出力は表形式（依頼内容／依頼者／初出日／現在の状況）でお願いします。
+
+【ここにメールスレッド全文を貼り付け】
+```
+
+### 9. 断りづらい依頼への角が立たない返信文作成
+対象: 両方 ｜ 場面: 納期短縮や無理な条件変更の依頼を丁寧に断りたいとき
+```text
+以下の依頼内容に対して、相手の事情に配慮しつつ、こちらの制約（【制約の内容】）を理由にお断り、または代替案を提示する返信メールを作成してください。文字数は300字前後、角が立たない表現にしてください。
+
+依頼内容: 【ここに依頼メールの要点を貼り付け】
+```
+
+### 10. メール文面のトーン調整（社外向け／社内向け）
+対象: 両方 ｜ 場面: 下書きした文章のトーンを目的に合わせて調整したいとき
+```text
+以下の文章を【社外のお客様向けの丁寧な文体／社内向けのカジュアルな文体】に書き換えてください。内容や事実関係は変えず、文体と語尾だけを調整してください。
+
+【ここに元の文章を貼り付け】
+```
+
+---
+
+## 3. Excel・スプレッドシート分析
+
+### 11. 表データの傾向を自然文で要約
+対象: 両方 ｜ 場面: 数値表を上司や他部署への報告用に言語化したいとき
+```text
+以下の表データから、①最も数値が高い項目、②最も数値が低い項目、③前月・前期からの増減が大きい項目、の3点を読み取り、報告用に150字程度の文章でまとめてください。専門用語は使わず平易な表現にしてください。
+
+【ここに表データを貼り付け（列名を含める）】
+```
+
+### 12. 関数・数式の説明と修正
+対象: 両方 ｜ 場面: 複雑な数式の意味が分からない、またはエラーが出て直したいとき
+```text
+以下の数式が何をしているのか、初心者にも分かるように1行ずつ日本語で説明してください。またエラーが出ている場合は、原因と修正後の数式も提示してください。
+
+数式: 【ここに数式をそのまま貼り付け】
+エラー内容（あれば）: 【エラーメッセージ】
+```
+
+### 13. データの異常値・入力ミス候補の洗い出し
+対象: 両方 ｜ 場面: 大量データの中から入力ミスや外れ値を手作業で探すのが大変なとき
+```text
+以下の表データについて、明らかに他の行と傾向が異なる値（入力ミスの可能性がある行）を指摘してください。指摘した行番号・列名・値・その値が疑わしいと判断した理由を表形式で出力してください。
+
+【ここに表データを貼り付け】
+```
+
+### 14. 集計表からグラフ化しやすい形にデータ整形
+対象: 両方 ｜ 場面: バラバラな形式のデータをグラフ作成用に整えたいとき
+```text
+以下のデータを、横軸を【項目名】、縦軸を【数値項目名】としたグラフを作る前提で、余分な列を除いた集計用の表に整形してください。合計行・小計行は分けて別枠で出力してください。
+
+【ここに元データを貼り付け】
+```
+
+### 15. 複数シート・複数期間データの比較サマリー作成
+対象: 両方 ｜ 場面: 月次・四半期などの複数期間データを比較して変化を把握したいとき
+```text
+以下は【対象期間①】と【対象期間②】の同じ形式のデータです。両者を比較し、増加した項目・減少した項目をそれぞれ上位3件ずつ、増減率（％）とともに箇条書きで出力してください。
+
+【対象期間①のデータ】
+【ここに貼り付け】
+
+【対象期間②のデータ】
+【ここに貼り付け】
+```
+
+---
+
+## 4. 資料作成（Word/Docs/PowerPoint/スライド）
+
+### 16. 箇条書きメモから提案書の骨子を作成
+対象: 両方 ｜ 場面: アイデア段階のメモを提案書の構成案に組み立てたいとき
+```text
+以下の箇条書きメモをもとに、【提案書のテーマ】に関する提案書の骨子（見出しと各見出し2〜3行の要約）を作成してください。構成は「背景」「課題」「提案内容」「期待される効果」「進め方」の5章立てにしてください。
+
+【ここに箇条書きメモを貼り付け】
+```
+
+### 17. 長文資料のスライド構成案への変換
+対象: 両方 ｜ 場面: Word/Docsで作った長文資料をプレゼン用に構成し直したいとき
+```text
+以下の文書を【枚数】枚程度のプレゼンスライド構成に変換してください。各スライドについて、タイトル・本文の箇条書き（各3行以内）を出力してください。図表を入れるべき箇所には「【図表案】」と明記してください。
+
+【ここに文書本文を貼り付け】
+```
+
+### 18. 社内向け文書のわかりやすい言い換え
+対象: 両方 ｜ 場面: 専門的・硬い文章を非専門部署にも伝わる表現にしたいとき
+```text
+以下の文章を、【対象読者（例：営業部の新入社員）】にも分かるように、専門用語を減らし、具体例を1つ交えて書き換えてください。文字数は元の文章の1.2倍以内に収めてください。
+
+【ここに元の文章を貼り付け】
+```
+
+### 19. 資料のトーン・文体チェックと統一
+対象: 両方 ｜ 場面: 複数人で分担して作った資料の文体がバラバラなとき
+```text
+以下の文章について、文体（である調／です・ます調）が統一されているか確認し、不統一な箇所を指摘してください。その上で【です・ます調／である調】に統一した全文を出力してください。
+
+【ここに資料本文を貼り付け】
+```
+
+### 20. スライドの発表原稿（トークスクリプト）作成
+対象: 両方 ｜ 場面: スライド内容をもとに話す原稿を準備したいとき
+```text
+以下のスライド内容をもとに、1枚あたり【想定秒数】秒で話せる発表原稿を作成してください。口語体で、聞き手が【聴衆の属性】であることを踏まえた分かりやすい言い回しにしてください。
+
+【ここにスライドの見出しと箇条書き内容を貼り付け】
+```
+
+---
+
+## 5. 営業（提案・見積・商談準備）
+
+### 21. 商談前の相手企業リサーチ要約
+対象: 両方 ｜ 場面: 初回商談の前に相手企業の情報を素早く整理したいとき
+```text
+以下の企業情報（Webサイトのテキストや会社概要）から、①事業内容、②想定される課題やニーズ、③自社の【提供サービス名】が刺さりそうなポイント、の3点を箇条書きでまとめてください。
+
+【ここに企業のWebサイト文章や会社概要を貼り付け】
+```
+
+### 22. 商談メモから提案骨子への変換
+対象: 両方 ｜ 場面: 商談中に取ったメモを提案書の骨子に落とし込みたいとき
+```text
+以下は【企業名】との商談メモです。この内容から、相手の課題・要望・予算感・決裁フローを整理した上で、提案の骨子（課題認識／提案内容／概算費用感／次のステップ）を作成してください。
+
+【ここに商談メモを貼り付け】
+```
+
+### 23. 見積書の内容チェックと説明文作成
+対象: 両方 ｜ 場面: 見積書を送る前に金額の妥当性や説明不足がないか確認したいとき
+```text
+以下の見積内容について、①金額の内訳が顧客に分かりやすいか、②説明が不足していそうな項目、を指摘してください。その上で、見積書に添える送付メール文（300字程度）も作成してください。
+
+【ここに見積内容（項目・金額）を貼り付け】
+```
+
+### 24. 競合比較資料の作成
+対象: 両方 ｜ 場面: 提案の中で自社と競合の違いを整理して見せたいとき
+```text
+自社【自社サービス名】と競合【競合サービス名】について、以下の情報をもとに比較表（比較項目／自社／競合／顧客にとっての意味）を作成してください。誇張せず、事実ベースで中立的な表現にしてください。
+
+自社の特徴: 【箇条書きで】
+競合の特徴: 【箇条書きで】
+```
+
+### 25. 商談後のフォローアップメール作成
+対象: 両方 ｜ 場面: 商談終了後、当日中にお礼と次のアクションを送りたいとき
+```text
+以下の商談内容をもとに、フォローアップメールを作成してください。①本日の感謝、②話した内容の要点3つ、③次回までにこちらが準備すること、④次回のご都合を伺う一文、の順で300字程度にまとめてください。
+
+【ここに商談で話した内容の要点を貼り付け】
+```
+
+---
+
+## 6. 経理・総務
+
+### 26. 経費精算の内容チェック
+対象: 両方 ｜ 場面: 提出された経費申請に不備がないか確認したいとき
+```text
+以下の経費申請内容について、社内規定（【規定の要点、例：交通費は実費、接待費は上限1万円/人】）と照らして、不備や確認が必要な項目を指摘してください。問題なければ「不備なし」と回答してください。
+
+【ここに経費申請の項目（日付・金額・用途）を貼り付け】
+```
+
+### 27. 請求書メールの文面作成
+対象: 両方 ｜ 場面: 取引先に請求書を送付する際の案内メールを作りたいとき
+```text
+【取引先名】宛に、請求書（請求金額【金額】円、支払期限【期日】）を送付する案内メールを作成してください。丁寧なビジネス文体で、添付ファイルがあることを明記してください。
+```
+
+### 28. 社内規定・マニュアルのQA形式への変換
+対象: 両方 ｜ 場面: 長い社内規定文書を問い合わせ対応用のQ&amp;A集にしたいとき
+```text
+以下の社内規定文書から、社員からよく聞かれそうな質問を5つ想定し、それぞれに対する回答をこの文書の内容に基づいて作成してください。出力形式はQ&amp;A形式でお願いします。
+
+【ここに社内規定・マニュアル本文を貼り付け】
+```
+
+### 29. 備品・契約更新のリマインド文作成
+対象: 両方 ｜ 場面: 契約更新やライセンス更新の社内通知を出したいとき
+```text
+【契約・サービス名】の更新期限が【期日】に迫っていることを関係者に知らせる社内通知メールを作成してください。対応が必要な担当者への依頼事項（更新の要否確認、承認フローなど）を箇条書きで含めてください。
+```
+
+### 30. 総務問い合わせメールの一次回答文作成
+対象: 両方 ｜ 場面: 社員からの総務系の問い合わせに定型的な一次回答をしたいとき
+```text
+以下の社員からの問い合わせ内容に対して、社内規定（【関連規定の要点】）に基づいた一次回答文を作成してください。規定に明記がない場合は「担当部署に確認の上、改めて連絡する」旨を記載してください。
+
+問い合わせ内容: 【ここに貼り付け】
+```
+
+---
+
+## 7. 人事・採用
+
+### 31. 求人票の叩き台作成
+対象: 両方 ｜ 場面: 新規ポジションの求人票を一から作るとき
+```text
+以下の情報をもとに求人票の叩き台を作成してください。構成は「募集背景」「業務内容」「求めるスキル・経験」「歓迎条件」「働き方・待遇」の5項目でお願いします。
+
+職種: 【職種名】
+募集背景: 【背景】
+必須スキル: 【箇条書きで】
+```
+
+### 32. 応募書類（履歴書・職務経歴書）の要点整理
+対象: 両方 ｜ 場面: 大量の応募書類から面接前に要点だけ把握したいとき
+```text
+以下の職務経歴書の内容から、①これまでの経験年数と職種、②募集ポジション（【募集ポジション名】）との関連が強いスキル・経験、③面接で確認したい点、を箇条書きで整理してください。
+
+【ここに職務経歴書の内容を貼り付け】
+```
+
+### 33. 面接の質問リスト作成
+対象: 両方 ｜ 場面: 面接前に候補者に応じた質問を準備したいとき
+```text
+以下の候補者の経歴と、募集ポジション（【募集ポジション名】）の要件をもとに、面接で聞くべき質問を【質問数】個作成してください。経験の深掘り質問と、カルチャーフィットを見る質問をバランスよく含めてください。
+
+候補者の経歴: 【ここに貼り付け】
+募集要件: 【ここに貼り付け】
+```
+
+### 34. 新入社員向けオンボーディング案内文作成
+対象: 両方 ｜ 場面: 入社日が近い新入社員に事前案内を送りたいとき
+```text
+【入社予定日】に入社する新入社員に向けて、初日の流れ（集合時間・場所・持ち物・当日のスケジュール概要）を案内するメールを作成してください。丁寧かつ緊張を和らげる柔らかいトーンでお願いします。
+
+初日の流れ: 【箇条書きで】
+```
+
+### 35. 人事評価コメントのドラフト作成
+対象: 両方 ｜ 場面: 評価シートに書くコメントの言葉選びに迷うとき
+```text
+以下の業務実績のメモをもとに、人事評価コメント（150字程度）のドラフトを作成してください。良かった点を具体的に、改善点は次期への期待として前向きな表現でまとめてください。
+
+【ここに業務実績のメモを貼り付け】
+```
+
+---
+
+## 8. カスタマーサポート
+
+### 36. 問い合わせ内容の分類と優先度付け
+対象: 両方 ｜ 場面: 大量の問い合わせメールをさばく前に仕分けしたいとき
+```text
+以下の複数の問い合わせ内容を、カテゴリ（【カテゴリ例：不具合／使い方／請求／解約】）ごとに分類し、対応優先度（高・中・低）を付けて表形式で出力してください。
+
+【ここに複数件の問い合わせ内容を貼り付け】
+```
+
+### 37. クレーム対応メールの下書き作成
+対象: 両方 ｜ 場面: お客様からのクレームに対して慎重な返信を準備したいとき
+```text
+以下のクレーム内容に対する返信メールの下書きを作成してください。①まずお詫びの言葉、②状況確認のための質問、③今後の対応方針、の順で構成し、言い訳がましい表現は避けてください。文字数は300字程度でお願いします。
+
+クレーム内容: 【ここに貼り付け】
+```
+
+### 38. FAQ・よくある質問集の作成
+対象: 両方 ｜ 場面: 過去の問い合わせ履歴からFAQページの原案を作りたいとき
+```text
+以下は過去の問い合わせ履歴です。この中から頻度が高い質問を上位【件数】件選び、Q&amp;A形式（質問／回答）でまとめてください。回答は初めて見る顧客にも分かる言葉で書いてください。
+
+【ここに過去の問い合わせ履歴を貼り付け】
+```
+
+### 39. 問い合わせ対応の一次回答テンプレート作成
+対象: 両方 ｜ 場面: 対応まで時間がかかる問い合わせに、まず受付連絡を送りたいとき
+```text
+以下の問い合わせ内容に対して、「受付は完了したこと」「回答までにかかる目安の日数（【日数】日）」「緊急の場合の連絡先」を含む一次回答メールのテンプレートを作成してください。
+
+問い合わせ内容: 【ここに貼り付け】
+```
+
+### 40. 顧客対応履歴からの傾向分析
+対象: 両方 ｜ 場面: 一定期間の対応履歴から改善点を見つけたいとき
+```text
+以下は【期間】分の顧客対応履歴です。この中から繰り返し発生している問題を3つ挙げ、それぞれの原因として考えられることと、再発防止のためにできそうな対応策を箇条書きで提示してください。
+
+【ここに対応履歴を貼り付け】
+```
+
+---
+
+## 9. マーケティング・SNS
+
+### 41. ブログ記事からSNS投稿文への要約
+対象: 両方 ｜ 場面: 長い記事をSNS用に短く要約したいとき
+```text
+以下のブログ記事の内容を、【X（Twitter）／Instagram／LinkedIn】投稿用に140字程度で要約してください。読者の興味を引く一文を冒頭に置き、最後に記事へのリンクを貼るスペースとして「【URL】」と記載してください。
+
+【ここにブログ記事本文を貼り付け】
+```
+
+### 42. 商品・サービス紹介文のバリエーション作成
+対象: 両方 ｜ 場面: 同じ商品説明を複数パターン用意してテストしたいとき
+```text
+以下の商品情報をもとに、SNS投稿用の紹介文を【本数】パターン作成してください。それぞれ切り口（例：機能重視／利用シーン重視／お客様の声重視）を変え、各150字以内にしてください。
+
+商品情報: 【ここに貼り付け】
+```
+
+### 43. メールマガジンの構成案作成
+対象: 両方 ｜ 場面: 定期配信するメルマガの構成を考えるとき
+```text
+【今月のテーマ】に関するメールマガジンの構成案を作成してください。構成は「件名案（3パターン）」「導入文」「本文の見出し3つとそれぞれの要約」「締めの一文（行動喚起）」でお願いします。
+```
+
+### 44. アンケート・レビュー結果の要約
+対象: 両方 ｜ 場面: 顧客アンケートやレビューの自由記述をまとめたいとき
+```text
+以下のアンケート自由記述回答をもとに、①好評だった点の上位3つ、②改善要望の上位3つ、を件数の目安とともに箇条書きでまとめてください。個別の回答をそのまま引用せず、傾向として要約してください。
+
+【ここにアンケート自由記述回答を貼り付け】
+```
+
+### 45. 競合のSNS投稿・広告文の傾向分析
+対象: 両方 ｜ 場面: 競合のSNS発信内容から自社の参考にしたいとき
+```text
+以下は競合【競合名】のSNS投稿文をいくつか集めたものです。この投稿群から、①よく使われている訴求ポイント、②投稿のトーン（フォーマル／カジュアル等）、③自社が参考にできそうな要素、を整理してください。
+
+【ここに競合のSNS投稿文を複数貼り付け】
+```
+
+---
+
+## 10. 経営・企画（NotebookLM活用含む）
+
+### 46. 複数資料を横断した論点整理
+対象: Gemini（NotebookLM） ｜ 場面: 複数の社内資料・議事録を一括で読み込んで論点を整理したいとき
+```text
+アップロードした資料（【資料の種類、例：過去3回分の経営会議議事録】）全体を通して、①繰り返し議論されているが結論が出ていない論点、②すでに合意されている方針、③資料間で矛盾している記述、の3つに分けて整理してください。
+```
+
+### 47. 経営会議向け報告資料の要約
+対象: 両方 ｜ 場面: 部門の状況を経営層向けに簡潔に報告したいとき
+```text
+以下の部門レポートを、経営会議で使う報告資料用に要約してください。構成は「今月のサマリー（3行）」「主要指標の増減」「課題」「来月のアクション」とし、全体で300字以内にしてください。
+
+【ここに部門レポートの内容を貼り付け】
+```
+
+### 48. 新規事業アイデアの壁打ち相手として整理
+対象: 両方 ｜ 場面: アイデア段階の事業案を整理してもらいたいとき
+```text
+以下の新規事業アイデアについて、①想定される顧客層、②解決しようとしている課題、③考えられるリスクや懸念点、④検証すべき最初のステップ、の4点で整理してください。良い点・悪い点どちらも率直に指摘してください。
+
+事業アイデア: 【ここに貼り付け】
+```
+
+### 49. 社内資料をもとにしたQ&amp;A想定問答集作成
+対象: Gemini（NotebookLM） ｜ 場面: 説明会や役員報告の前に想定質問への回答を準備したいとき
+```text
+アップロードした資料（【資料名】）の内容をもとに、【説明会／役員会議】で聞かれそうな質問を【件数】個想定し、資料の内容に基づいた回答案を作成してください。資料に記載がない内容は無理に答えず「資料には記載なし」と明記してください。
+```
+
+### 50. 中期計画・企画書のたたき台作成
+対象: 両方 ｜ 場面: ゼロから中期計画や企画書の骨子を作りたいとき
+```text
+以下の情報をもとに、【対象期間、例：3か年】の中期計画のたたき台を作成してください。構成は「現状分析」「目指す姿」「重点施策（3つ）」「施策ごとの概算スケジュール」でお願いします。
+
+現状の情報: 【ここに事業の現状や課題を箇条書きで貼り付け】
+目指したい方向性: 【ここに簡単な方向性を記載】
+```
+
+---
+
+**ポイント**: AIの出力は人が確認してから使うのが前提です。
+</pre>
+    <div class="btns">
+      <button class="btn" onclick="copyPrompt('p4', this)">📋 コピー</button>
+      <button class="btn ghost" onclick="downloadText('p4','copilot-gemini-prompts50.md', this)">⬇ ダウンロード（.md）</button>
+    </div>
+  </section>
+  <section id="kit5">
+    <div class="sec-h"><div class="no">5</div><h2>職種別AI活用例50選</h2></div>
+    <p class="body">ヒアリングや研修で「御社ならこう使えます」と見せるためのカタログ。営業・経理・人事・製造・建設・医療介護・小売など10職種×5例です。</p>
+    <ul class="checks"><li>中小企業に実在する業務（見積書・日報・シフト表・請求書…）で構成</li><li>使うツールとやり方、変わることを各例に明記</li><li>相手の職種のページだけ見せる使い方が◎</li></ul>
+    <pre class="prompt" id="p5"># 🎁 職種別AI活用例50選 — 現場ヒアリング・研修でそのまま使えるカタログ
+
+中小企業の現場でよくある業務を10職種×5例でまとめました。Microsoft 365 Copilot、Gemini for Google Workspace、NotebookLMなど、多くの企業がすでに契約している（か、契約を検討しやすい）ツールを中心にしています。
+
+**受け取り方**: このファイルをそのまま保存して使えます。
+
+---
+
+## このカタログの使い方
+
+- **ヒアリングで**: 訪問先の職種に近いページだけを開いて見せると、「うちでも使えそう」という反応が出やすくなります。全部見せる必要はありません。
+- **研修の演習ネタに**: 各例の「やり方」をそのままお題にして、参加者に自分の業務データで試してもらう演習が作れます。
+- **提案書の叩き台に**: 相手企業の職種構成に合わせて該当ページを抜粋し、そのまま提案資料に転用できます。
+- 記載の時間感覚はあくまで目安です。データ量や慣れによって変わるため、断定はせず「そのくらいのイメージ」として使ってください。
+
+---
+
+## 1. 営業
+
+### 1. 営業: 見積書のたたき台作成
+- 使うもの: Copilot（Excel／Word）
+- やり方: 過去の類似見積書と今回の条件（数量・単価・納期）を伝え、「この条件で見積書のたたき台を作って」と頼む。
+- 変わること: ゼロから作ると30分かかる作業が、たたき台作成まで10分前後で終わる目安になる。
+
+### 2. 営業: 商談議事録からの次アクション抽出
+- 使うもの: Copilot（Teams）
+- やり方: 商談の録画・文字起こしを基に「決定事項と次のアクションを箇条書きで」と頼む。
+- 変わること: 議事録を見返して手打ちする時間が、確認だけで済む数分程度に短縮される目安。
+
+### 3. 営業: 顧客への提案メール下書き
+- 使うもの: Gemini（Gmail）
+- やり方: 相手の業種・要望メモを貼り、「丁寧なトーンで提案メールの下書きを」と頼む。
+- 変わること: 文面を一から考える15分程度の作業が、たたき台を直すだけの5分程度になる目安。
+
+### 4. 営業: 過去商談履歴のNotebookLM化
+- 使うもの: NotebookLM
+- やり方: 過去の商談メモ・議事録を複数アップロードし、「この顧客との過去のやり取りを要約して」と質問する。
+- 変わること: 訪問前に過去資料を読み返す時間が、要約を読むだけの数分に圧縮される目安。
+
+### 5. 営業: 週次売上報告の文章化
+- 使うもの: Copilot（Excel＋Word）
+- やり方: 売上実績表をExcelで用意し、「この数字から週次報告の文章を作って」とWordやCopilot Chatに頼む。
+- 変わること: 数字を見ながら文章を組み立てる20分程度の作業が、下書き確認の5分程度になる目安。
+
+---
+
+## 2. 事務・総務
+
+### 6. 事務・総務: 会議議事録の整形
+- 使うもの: Copilot（Teams／Word）
+- やり方: Teams会議の文字起こしを基に「決定事項・懸案事項・担当者を分けて整理して」と頼む。
+- 変わること: 手書きメモを清書する30分程度の作業が、体裁確認だけの10分程度になる目安。
+
+### 7. 事務・総務: 社内問い合わせ対応テンプレート作成
+- 使うもの: Gemini（Google ドキュメント）
+- やり方: よくある質問と回答例を貼り、「同じトーンで似た質問への回答テンプレートを増やして」と頼む。
+- 変わること: 都度考えて返信する手間が、テンプレートから選ぶだけに近づく目安。
+
+### 8. 事務・総務: 来客対応・電話メモの整理
+- 使うもの: Copilot（Outlook）
+- やり方: 走り書きのメモをそのまま貼り、「関係者に共有するメール文にして」と頼む。
+- 変わること: メモを読める文章に直す作業が、確認だけの数分に短縮される目安。
+
+### 9. 事務・総務: 社内マニュアルのNotebookLM化
+- 使うもの: NotebookLM
+- やり方: 既存の業務マニュアル（PDF・Word）を複数アップロードし、「新人が最初に読む順番で要点を教えて」と質問する。
+- 変わること: 新人が全マニュアルに目を通す数時間が、要点把握の30分程度に近づく目安。
+
+### 10. 事務・総務: 郵便物・書類仕分けルールの言語化
+- 使うもの: Gemini（Google スプレッドシート）
+- やり方: 過去の仕分け実績を貼り、「このパターンから仕分けルールを一覧表にして」と頼む。
+- 変わること: 属人化していたルールを言語化する作業が、たたき台修正だけの時間で済む目安。
+
+---
+
+## 3. 経理
+
+### 11. 経理: 請求書データの一覧化
+- 使うもの: Copilot（Excel）
+- やり方: 請求書のPDFやスキャン画像の内容を手入力した表を貼り、「金額・支払期日ごとに並べ替えて集計して」と頼む。
+- 変わること: 手作業での並べ替え・集計30分程度が、確認だけの10分程度になる目安。
+
+### 12. 経理: 経費精算チェックの一次確認
+- 使うもの: Copilot（Excel）
+- やり方: 経費精算一覧を貼り、「金額の桁ミスや規定超過がないか確認して」と頼む。
+- 変わること: 目視での全件チェックが、指摘箇所の再確認だけに絞られる目安。
+
+### 13. 経理: 月次収支報告の文章化
+- 使うもの: Gemini（Google スプレッドシート＋ドキュメント）
+- やり方: 月次の収支表を貼り、「前月比のポイントを3つにまとめて報告文にして」と頼む。
+- 変わること: 数字から文章を組み立てる作業が、たたき台の言い回し調整程度になる目安。
+
+### 14. 経理: 取引先ごとの入金状況まとめ
+- 使うもの: Copilot（Excel）
+- やり方: 入金記録の一覧を貼り、「取引先別に未入金・入金済みを分けて」と頼む。
+- 変わること: 手作業でのフィルタ・並べ替えが、結果確認だけになる目安。
+
+### 15. 経理: 経理関連規程のNotebookLM化
+- 使うもの: NotebookLM
+- やり方: 社内の経費規程・稟議規程をアップロードし、「出張費の上限と申請手順を教えて」のように質問する。
+- 変わること: 規程集を読み返す都度の数分〜十数分が、質問して確認するだけに近づく目安。
+
+---
+
+## 4. 人事・採用
+
+### 16. 人事・採用: 求人票のたたき台作成
+- 使うもの: Copilot（Word）
+- やり方: 募集職種・条件を箇条書きで伝え、「魅力が伝わる求人票の文章にして」と頼む。
+- 変わること: 文章を練る30分程度の作業が、表現の微調整だけの10分程度になる目安。
+
+### 17. 人事・採用: 応募者スクリーニングの一次整理
+- 使うもの: Gemini（Google スプレッドシート）
+- やり方: 応募者一覧（経歴・希望条件）を貼り、「募集要件に近い順に並べて」と頼む。
+- 変わること: 一件ずつ読んで判断する時間が、上位候補の再確認に絞られる目安。
+
+### 18. 人事・採用: 面接質問リストの作成
+- 使うもの: Copilot（Word）
+- やり方: 募集職種と重視したいポイントを伝え、「その職種向けの面接質問を10個」と頼む。
+- 変わること: 質問を考える時間が、質問リストを見直すだけの数分になる目安。
+
+### 19. 人事・採用: 就業規則の問い合わせ対応
+- 使うもの: NotebookLM
+- やり方: 就業規則・給与規程をアップロードし、「有給休暇の繰越ルールを教えて」のように質問する。
+- 変わること: 規則集を都度めくる手間が、質問して確認するだけに近づく目安。
+
+### 20. 人事・採用: 新入社員オリエンテーション資料の下書き
+- 使うもの: Gemini（Google スライド）
+- やり方: 伝えたい項目（会社概要・ルール・連絡先）を箇条書きで渡し、「オリエン資料の構成案にして」と頼む。
+- 変わること: 構成をゼロから考える時間が、内容の肉付けだけに絞られる目安。
+
+---
+
+## 5. カスタマーサポート
+
+### 21. カスタマーサポート: クレーム対応記録の要約
+- 使うもの: Copilot（Outlook／Word）
+- やり方: やり取りのメール・チャット履歴を貼り、「経緯と対応状況を時系列で要約して」と頼む。
+- 変わること: 引き継ぎ時に一から読み返す時間が、要約確認の数分に近づく目安。
+
+### 22. カスタマーサポート: よくある質問（FAQ）の整備
+- 使うもの: Gemini（Google ドキュメント）
+- やり方: 過去の問い合わせ内容を貼り、「似た質問をまとめてFAQ形式にして」と頼む。
+- 変わること: FAQをゼロから書く作業が、まとめた案の言い回し調整に近づく目安。
+
+### 23. カスタマーサポート: 返信メールのトーン調整
+- 使うもの: Copilot（Outlook）
+- やり方: 書いた返信文を貼り、「もう少し柔らかい表現に直して」と頼む。
+- 変わること: 表現に悩む時間が、提案された言い回しを選ぶだけに近づく目安。
+
+### 24. カスタマーサポート: 問い合わせ傾向の集計
+- 使うもの: Copilot（Excel）
+- やり方: 問い合わせ記録の一覧を貼り、「カテゴリ別・月別に件数を集計して」と頼む。
+- 変わること: 手作業での分類・集計が、結果の確認だけになる目安。
+
+### 25. カスタマーサポート: 対応マニュアルのNotebookLM化
+- 使うもの: NotebookLM
+- やり方: 対応マニュアル・過去の対応事例集をアップロードし、「返品対応の手順を教えて」のように質問する。
+- 変わること: マニュアルを探して読む数分の手間が、質問して確認するだけに近づく目安。
+
+---
+
+## 6. 製造・現場管理
+
+### 26. 製造・現場管理: 日報の要点整理
+- 使うもの: Copilot（Word／Excel）
+- やり方: 現場からの日報（メモ書き含む）を貼り、「進捗・課題・明日の予定に分けて整理して」と頼む。
+- 変わること: 日報を読んで管理表に転記する作業が、確認と貼り付けだけに近づく目安。
+
+### 27. 製造・現場管理: 朝礼資料のたたき台作成
+- 使うもの: Gemini（Google スライド）
+- やり方: 昨日の実績・今日の予定を箇条書きで伝え、「朝礼で使う資料の構成にして」と頼む。
+- 変わること: 資料作成の15分程度が、内容確認の5分程度になる目安。
+
+### 28. 製造・現場管理: 設備点検記録の集計
+- 使うもの: Copilot（Excel）
+- やり方: 点検記録の一覧を貼り、「異常が出た項目だけ抽出して一覧にして」と頼む。
+- 変わること: 全件を目視で確認する作業が、抽出結果の再確認だけに絞られる目安。
+
+### 29. 製造・現場管理: 作業手順書の分かりやすい書き直し
+- 使うもの: Copilot（Word）
+- やり方: 既存の手順書を貼り、「新人でも分かるように箇条書きで書き直して」と頼む。
+- 変わること: 手順書を作り直す作業が、たたき台の確認・修正に近づく目安。
+
+### 30. 製造・現場管理: 安全衛生マニュアルのNotebookLM化
+- 使うもの: NotebookLM
+- やり方: 安全衛生マニュアル・過去のヒヤリハット記録をアップロードし、「この作業での注意点を教えて」と質問する。
+- 変わること: マニュアルを探して読む手間が、質問して確認するだけに近づく目安。
+
+---
+
+## 7. 建設・不動産
+
+### 31. 建設・不動産: 現場日報から週報への集約
+- 使うもの: Copilot（Excel／Word）
+- やり方: 各現場の日報を貼り、「今週分をまとめて週報の形式にして」と頼む。
+- 変わること: 日報を一件ずつ拾って転記する30分程度の作業が、確認だけの10分程度になる目安。
+
+### 32. 建設・不動産: 物件案内文の作成
+- 使うもの: Gemini（Google ドキュメント）
+- やり方: 物件の基本情報（広さ・立地・設備）を箇条書きで伝え、「魅力が伝わる案内文にして」と頼む。
+- 変わること: 案内文を考える時間が、表現の微調整だけに近づく目安。
+
+### 33. 建設・不動産: 見積・契約条件の比較表作成
+- 使うもの: Copilot（Excel）
+- やり方: 複数業者の見積内容を貼り、「項目ごとに横並びで比較できる表にして」と頼む。
+- 変わること: 手作業で表を組む作業が、内容確認だけに近づく目安。
+
+### 34. 建設・不動産: 顧客からの問い合わせメール対応
+- 使うもの: Gemini（Gmail）
+- やり方: 問い合わせ内容を貼り、「案内文のトーンで返信の下書きを」と頼む。
+- 変わること: 返信文を考える10分程度が、確認・微調整の数分程度になる目安。
+
+### 35. 建設・不動産: 契約書・重要事項説明書のNotebookLM化
+- 使うもの: NotebookLM
+- やり方: 契約書のひな形・重要事項説明書をアップロードし、「特約事項の要点を教えて」と質問する。
+- 変わること: 長い契約文書を読み返す時間が、要点確認の数分に近づく目安。
+
+---
+
+## 8. 医療・介護（事務まわり）
+
+### 36. 医療・介護（事務まわり）: 申し送り事項の整理
+- 使うもの: Copilot（Word）
+- やり方: 口頭・メモの申し送り内容を貼り、「時系列で分かりやすく整理して」と頼む。
+- 変わること: 申し送りノートを清書する作業が、確認だけの数分に近づく目安。
+
+### 37. 医療・介護（事務まわり）: 利用者向け案内文の作成
+- 使うもの: Gemini（Google ドキュメント）
+- やり方: 伝えたい内容（行事予定・注意事項）を箇条書きで伝え、「利用者・ご家族向けの案内文にして」と頼む。
+- 変わること: 案内文を考える15分程度が、表現確認の5分程度になる目安。
+
+### 38. 医療・介護（事務まわり）: 会議・カンファレンス記録の要約
+- 使うもの: Copilot（Teams／Word）
+- やり方: カンファレンスの文字起こしを基に「参加者・決定事項・次回までの課題を整理して」と頼む。
+- 変わること: 記録をまとめる30分程度の作業が、確認だけの10分程度になる目安。
+
+### 39. 医療・介護（事務まわり）: シフト表作成の下書き
+- 使うもの: Copilot（Excel）
+- やり方: 出勤希望・必要人数の条件を伝え、「条件に沿ったシフト表のたたき台を作って」と頼む。
+- 変わること: 手作業での調整30分程度が、微調整だけの10分程度になる目安（最終確認は必須）。
+
+### 40. 医療・介護（事務まわり）: 運営規程・マニュアルのNotebookLM化
+- 使うもの: NotebookLM
+- やり方: 施設の運営規程・業務マニュアルをアップロードし、「緊急時の連絡手順を教えて」と質問する。
+- 変わること: 分厚い規程集をめくる手間が、質問して確認するだけに近づく目安。
+
+---
+
+## 9. 小売・飲食
+
+### 41. 小売・飲食: シフト表の作成・調整
+- 使うもの: Copilot（Excel）
+- やり方: スタッフの希望シフトと必要人数を貼り、「希望をなるべく反映したシフト表にして」と頼む。
+- 変わること: 手作業での調整30分程度が、微調整だけの10分程度になる目安（最終確認は必須）。
+
+### 42. 小売・飲食: POP・チラシ文章の作成
+- 使うもの: Gemini（Google ドキュメント）
+- やり方: 商品名・特徴・価格を伝え、「目を引くPOP文を3案」と頼む。
+- 変わること: コピーを考える時間が、3案から選ぶだけの数分に近づく目安。
+
+### 43. 小売・飲食: 発注数の目安整理
+- 使うもの: Copilot（Excel）
+- やり方: 過去の販売実績表を貼り、「曜日別の傾向を教えて」と頼む（発注の最終判断は自分で行う）。
+- 変わること: 過去データを見返す作業が、傾向の確認だけに近づく目安。
+
+### 44. 小売・飲食: 接客・クレーム対応の振り返りメモ作成
+- 使うもの: Copilot（Word）
+- やり方: 対応内容の走り書きを貼り、「経緯と改善点を整理して」と頼む。
+- 変わること: 振り返りメモをまとめる作業が、確認だけの数分に近づく目安。
+
+### 45. 小売・飲食: 衛生管理・接客マニュアルのNotebookLM化
+- 使うもの: NotebookLM
+- やり方: 衛生管理マニュアル・接客マニュアルをアップロードし、「アレルギー対応の手順を教えて」と質問する。
+- 変わること: マニュアルを探して読む手間が、質問して確認するだけに近づく目安。
+
+---
+
+## 10. 経営者・管理職
+
+### 46. 経営者・管理職: 会議資料のたたき台作成
+- 使うもの: Copilot（PowerPoint）
+- やり方: 話したい要点を箇条書きで伝え、「経営会議用のスライド構成にして」と頼む。
+- 変わること: 資料構成を考える30分程度の作業が、内容の肉付けだけの10分程度になる目安。
+
+### 47. 経営者・管理職: 複数部署からの報告の横断整理
+- 使うもの: NotebookLM
+- やり方: 各部署の月次報告書を複数アップロードし、「部署横断で共通する課題を教えて」と質問する。
+- 変わること: 報告書を一つずつ読み比べる時間が、要約を読む数分に近づく目安。
+
+### 48. 経営者・管理職: 社内向けメッセージの文章化
+- 使うもの: Gemini（Google ドキュメント）
+- やり方: 伝えたい方針を箇条書きで伝え、「社員向けに前向きなトーンの文章にして」と頼む。
+- 変わること: 文章を練る時間が、表現の微調整だけに近づく目安。
+
+### 49. 経営者・管理職: 議事録からの意思決定ログ作成
+- 使うもの: Copilot（Teams／Word）
+- やり方: 経営会議の文字起こしを基に「決定事項とその理由だけを抜き出して」と頼む。
+- 変わること: 議事録全体を読み返す手間が、決定事項の確認だけに絞られる目安。
+
+### 50. 経営者・管理職: 契約書・規程類の要点把握
+- 使うもの: NotebookLM
+- やり方: 取引先との契約書・社内規程をアップロードし、「注意すべき条項を教えて」と質問する（最終判断は必ず自分や専門家が行う）。
+- 変わること: 契約書を読み込む時間が、要点確認の数分に近づく目安。
+
+---
+
+**ポイント**: どの例も「使うツールを変える」のではなく「今の業務データをそのまま貼って頼み方を変える」だけなので、契約中のツールがあれば今日から試せます。
+</pre>
+    <div class="btns">
+      <button class="btn" onclick="copyPrompt('p5', this)">📋 コピー</button>
+      <button class="btn ghost" onclick="downloadText('p5','shokushu-usecase50.md', this)">⬇ ダウンロード（.md）</button>
+    </div>
+  </section>
+  <section id="kit6">
+    <div class="sec-h"><div class="no">6</div><h2>Claude Code連携術 — “武器”側セットアップ</h2></div>
+    <p class="body">顧客に教えるのはCopilot/Gemini、自分の提案書・研修資料・リサーチはClaude Codeで量産する——その裏方の型です。ファイル構造テンプレとCLAUDE.md雛形つき。</p>
+    <ul class="checks"><li>コンサル業務用リポジトリのフォルダ構造テンプレ</li><li>CLAUDE.md（自分の事業ルール）の雛形全文</li><li>ヒアリングメモ→提案書などの実プロンプト5本</li></ul>
+    <pre class="prompt" id="p6"># 🎁 Claude Code連携術 — AIコンサルの"武器"側セットアップ
+
+顧客に教える生成AIツールはCopilotやGeminiでも、コンサル自身が使う提案書・研修資料・リサーチはClaude Codeで量産する、という役割分担を前提にした連携術です。案件が増えるほど効いてくる「裏方の型」をまとめました。
+
+**受け取り方**: 下のコードブロックをコピーするか、このファイルを保存してください。
+
+## 1. AIコンサル業務用リポジトリのファイル構造テンプレート
+
+```text
+ai-consul-ops/
+├── CLAUDE.md              # 自分の事業ルール（応答言語・表記規則・提案書の型など）
+├── templates/             # 提案書・研修資料・議事録の雛形置き場
+├── clients/               # 顧客ごとのフォルダをここに作成
+│   └── &lt;顧客名&gt;/
+│       ├── hearing.md     # 初回ヒアリングの記録
+│       ├── proposal.md    # その顧客向け提案書の実体
+│       ├── training/      # 研修スライド・配布資料
+│       ├── prompts/       # その顧客向けに調整したプロンプト集
+│       └── minutes/       # 打ち合わせ議事録
+└── research/              # 業界動向・競合事例などのリサーチ置き場
+```
+
+## 2. CLAUDE.md の雛形全文
+
+```text
+# AIコンサル業務ルール
+
+- 応答は日本語で行う。専門用語は初出時に一言補足する
+- 顧客名・企業名・社外秘情報はファイル内では仮名（A社、B社担当者など）で扱う
+- 提案書を書くときは templates/proposal.md の構成順に従う
+- 数字・統計・料金は出典が明確な場合のみ記載し、断定できないものは「要確認」と明記する
+- 研修資料は専門用語を避け、日常語と比喩で説明する（対象は非エンジニア）
+- 顧客の実データ・個人情報・契約書原本はそのまま貼り付けず、要約または仮名化してから扱う
+- 議事録は「決定事項」「宿題」「次回日程」の3項目を必ず含める
+- 見積もり・料金提示を含む文書は、送付前に必ず人間の確認を挟む
+- 同じ顧客向けの資料は clients/&lt;顧客名&gt;/ 配下にまとめ、他顧客のフォルダを参照しない
+```
+
+## 3. そのまま使える実プロンプト5本
+
+### ①ヒアリングメモ→提案書たたき台
+
+```text
+以下は顧客への初回ヒアリングメモです。この内容をもとに、templates/proposal.mdの構成に沿った提案書のたたき台を作成してください。
+- 現状の課題を3つに整理する
+- 各課題に対応する生成AI活用案を1つずつ提示する（ツール名は具体的に）
+- 導入の優先順位と理由を添える
+- 数字や効果見込みは、ヒアリングメモに根拠がある場合のみ記載し、ない場合は「要ヒアリング」と書く
+
+【ヒアリングメモ】
+（ここに貼り付け）
+```
+
+### ②顧客の業種→活用例カタログ生成
+
+```text
+顧客の業種は「（業種名）」、従業員規模は「（人数）」です。この業種・規模感で実際に効果が出やすい生成AI活用例を8つ、以下の形式でカタログ化してください。
+- 業務名
+- 使うツールの種類（文書作成/画像/音声/検索など）
+- 具体的な使い方（1〜2文）
+- 想定される効果（誇張せず、条件付きで）
+- 導入難易度（低/中/高）
+
+専門用語は避け、非エンジニアの経営者が読んでもわかる言葉にしてください。
+```
+
+### ③研修スライド構成案
+
+```text
+「（テーマ）」についての社内研修スライドの構成案を作成してください。対象は生成AIを触ったことがない非エンジニアの社員です。
+- 全体を10〜15枚程度に収める
+- 各スライドのタイトルと、話す内容の要点（箇条書き2〜3個）を書く
+- 冒頭に「なぜこれを学ぶ必要があるか」を置く
+- 実際に手を動かす演習パートを2箇所以上入れる
+- 専門用語が出る箇所には比喩や日常例を添える
+```
+
+### ④月次レポートの下書き
+
+```text
+以下は今月の顧客支援活動のメモです。月次レポートの下書きを作成してください。
+- 「今月実施したこと」「成果・変化」「来月の予定」の3セクション構成にする
+- 成果は事実ベースで書き、憶測や誇張は避ける（数字が不明な場合は「体感として」等と明記）
+- 顧客が経営層に転送してもそのまま使える丁寧な文体にする
+
+【今月のメモ】
+（ここに貼り付け）
+```
+
+### ⑤業界リサーチ依頼
+
+```text
+「（業界名）」における生成AI導入の最新動向をリサーチしてください。
+- 直近1年程度の傾向を中心にする
+- 情報源が確認できないものは「未確認」と明記し、断定しない
+- 中小企業が参考にしやすい事例を優先する
+- 最後に「この顧客への提案に使えそうな示唆」を3点まとめる
+```
+
+## 4. もう一歩 — 自律実行・分担の使い所
+
+`/goal` はゴールを設定して自律的にタスクを進めさせる機能で、「A社向け提案書一式をtemplates/proposal.mdの型に沿って完成させる」のようなまとまった作業を任せるときに向いています。サブエージェントは調査・リサーチと資料化（スライドや文書への整形）のように性質の異なる作業を並行して分担させる使い方が基本で、たとえば「業界動向の調査」を1つのサブエージェントに、「調査結果を研修スライド構成に落とし込む」作業を別のサブエージェントに任せる、といった分業ができます。案件数が増えて一人で回しきれなくなってきたタイミングで検討するとよい範囲です。まずは3節のプロンプトを手動で使い、必要に応じて自律実行や分担に広げていく順番をおすすめします。
+
+## 5. 注意 — 顧客データの扱い
+
+顧客の実名・連絡先・契約内容・財務データなどの個人情報や社外秘情報は、そのままAIに貼り付けないでください。ヒアリングメモや議事録を扱う際は、CLAUDE.mdのルールに従って仮名化・要約してから入力する運用を徹底してください。見積もりや契約に関わる内容は、AIが作成した下書きであっても送付前に必ず人間が確認してください。
+
+**ポイント**: 顧客への提案は分かりやすいツールで、自分の裏方作業は使い慣れたツールで、という二刀流がコンサル業務の量産効率を左右します。
+</pre>
+    <div class="btns">
+      <button class="btn" onclick="copyPrompt('p6', this)">📋 コピー</button>
+      <button class="btn ghost" onclick="downloadText('p6','claudecode-renkei.md', this)">⬇ ダウンロード（.md）</button>
+    </div>
+  </section>
+  <section id="kit7">
+    <div class="sec-h"><div class="no">7</div><h2>初回ヒアリングシート</h2></div>
+    <p class="body">訪問時にそのまま使える質問リスト。会社の基本・ツール環境・業務の棚卸し・期待と決裁の28問＋次のアクション欄です。</p>
+    <ul class="checks"><li>M365かGoogle Workspaceかを最初に確認する設計</li><li>「時間が溶けている業務トップ3」を引き出す質問群</li><li>各セクションに聞き方のコツつき</li></ul>
+    <pre class="prompt" id="p7"># 🎁 初回ヒアリングシート
+
+中小企業への訪問時にそのまま使える質問リストです。印刷して手書きで書き込む前提の形式でまとめています。
+
+**受け取り方**: 下のコードブロックをコピーするか、このファイルを保存してください。
+
+```text
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+生成AI導入 初回ヒアリングシート
+訪問日：　　　年　　月　　日　　対応者：
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+【A. 会社の基本】
+聞き方のコツ：世間話の延長で聞くと構えられない。名刺交換のあとに自然に流す。
+
+A1. 業種・事業内容：
+
+A2. 従業員数（正社員／パート・アルバイト）：
+
+A3. 拠点数・所在地（本社／支社／店舗など）：
+
+A4. 設立年・会社の成長フェーズ（拡大中／安定期／事業承継期など）：
+
+A5. 意思決定の中心は社長か、部門長クラスか：
+
+
+【B. ツール環境】
+聞き方のコツ：専門用語で聞かず「今お使いのメールやファイル共有は何で」と聞くと答えやすい。
+
+B1. Microsoft 365かGoogle Workspaceか、それ以外か：
+
+B2. ライセンス種別（プラン名・契約数がわかれば）：
+
+B3. 社内に情シス担当（専任／兼任／不在）はいるか：
+
+B4. セキュリティ・情報管理の方針はあるか（規程の有無、機密情報の扱いルール）：
+
+B5. 過去にITツール導入で失敗した／定着しなかった経験はあるか：
+
+
+【C. 業務の棚卸し】
+聞き方のコツ：抽象的に聞かず「今週やった仕事を思い出しながら」と具体的な場面を思い出してもらう。
+
+C1. 最も時間が溶けていると感じる業務トップ3は：
+
+C2. 毎日・毎週決まって発生する繰り返し作業は：
+
+C3. 特定の人しかできない属人化した業務は（担当者名は仮名でよい）：
+
+C4. 紙の書類が今も残っている業務・工程は：
+
+C5. Excelで手作業の集計・転記をしている業務は：
+
+C6. 顧客対応（問い合わせ・見積・受発注）で時間がかかっている部分は：
+
+C7. 資料作成（提案書・報告書・議事録など）にかかる時間の実感は：
+
+C8. 過去半年で「もっと早くできれば」と感じた瞬間は：
+
+
+【D. 期待と判断】
+聞き方のコツ：期待と不安は必ずセットで聞く。不安を先に出してもらうと本音が出やすい。
+
+D1. 生成AIに期待していることは：
+
+D2. 導入にあたって不安に感じていることは（情報漏洩・コスト・社員の反発など）：
+
+D3. 導入の決裁者は誰か（本人／上長／稟議が必要か）：
+
+D4. 想定している予算感（月額・年間、あるいは未定）：
+
+D5. 開始したい時期の目安（今すぐ／来期／未定）：
+
+
+【E. 次のアクション】
+E1. 次回デモで具体的に見せてほしい業務：
+
+E2. 次回訪問・打ち合わせの候補日程：
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+**ポイント**: CとDのセクションは特に、具体的な業務場面を思い出してもらいながら聞くと解像度の高い回答が集まります。
+</pre>
+    <div class="btns">
+      <button class="btn" onclick="copyPrompt('p7', this)">📋 コピー</button>
+      <button class="btn ghost" onclick="downloadText('p7','hearing-sheet.md', this)">⬇ ダウンロード（.md）</button>
+    </div>
+  </section>
+  <section>
+    <div class="sec-h"><div class="no">✓</div><h2>受け取り方・使い方</h2></div>
+    <ul class="steps">
+      <li><span class="n">1</span>各キットの「📋 コピー」でクリップボードへ、「⬇ ダウンロード」で .md ファイルとして保存できます</li>
+      <li><span class="n">2</span>GitHubリポジトリの kit/ フォルダからも、各ファイルをそのまま受け取れます</li>
+      <li><span class="n">3</span>まずは「⑦ヒアリングシート」を印刷し、「①営業先URL集」から自分の地域×1チャネルを選ぶところから始めるのがおすすめです</li>
+    </ul>
+    <div class="box"><h3>使うときの注意</h3>
+      <ul>
+        <li>AIの出力・テンプレの文面は、人が確認してから社外に出してください</li>
+        <li>顧客の実データ・個人情報をそのまま生成AIに貼らない運用ルールを最初に決めてください</li>
+        <li>収入・成果の例は保証ではありません。相場・価格は自分の実績に合わせて調整してください</li>
+      </ul></div>
+  </section>
+  <footer>
+    <div class="frow">
+      <div class="lg"><img src="data:image/jpeg;base64,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" alt="ClaudeCodeチャンネル"><b>ClaudeCodeチャンネル<small>Claude Code を学ぶ</small></b></div>
+      <a class="cta" href="https://www.youtube.com/@claudecode">&lt;/&gt; チャンネル登録</a>
+    </div>
+    <p class="src">解説の全文（README）・スライド・1枚資料: <a href="https://github.com/fuuuuuuma/ai-consulting-guide-2026">github.com/fuuuuuuma/ai-consulting-guide-2026</a><br>
+      株式会社エヌイチのサービス・採用: <a href="https://n1-inc.co.jp/">n1-inc.co.jp</a></p>
+  </footer>
+</div>
+<script>
+function copyTextWithFallback(text){
+  function fallback(){
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      return ok;
+    } catch(e){ return false; }
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text).then(() => true).catch(fallback);
+  }
+  return Promise.resolve(fallback());
+}
+function showCopyResult(btn, ok){
+  const orig = btn.textContent;
+  btn.textContent = ok ? '✔ コピーしました！' : '✖ コピーできませんでした。⬇ ダウンロードをご利用ください';
+  setTimeout(() => { btn.textContent = orig; }, ok ? 1800 : 3500);
+}
+async function copyPrompt(id, btn){
+  const ok = await copyTextWithFallback(document.getElementById(id).textContent);
+  showCopyResult(btn, ok);
+}
+function downloadText(id, filename, btn){
+  try {
+    const text = document.getElementById(id).textContent;
+    const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  } catch(e){
+    if(btn){ const orig = btn.textContent; btn.textContent = '✖ 保存できません。上のコピーをご利用ください'; setTimeout(() => { btn.textContent = orig; }, 3500); }
+  }
+}
+</script>
+</body>
+</html>
